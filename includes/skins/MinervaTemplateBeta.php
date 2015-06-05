@@ -67,9 +67,9 @@ class MinervaTemplateBeta extends MinervaTemplate {
 	 * Renders pre-content (e.g. heading)
 	 * @param array $data Data used to build the page
 	 */
-	protected function renderPreContent( $data ) {
+	protected function renderContentWrapper( $data ) {
 		$data['isBeta'] = true;
-		parent::renderPreContent( $data );
+		parent::renderContentWrapper( $data );
 	}
 
 	/**

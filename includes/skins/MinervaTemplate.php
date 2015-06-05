@@ -205,29 +205,6 @@ class MinervaTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Renders the content of a page
-	 * @param array $data Data used to build the page
-	 */
-	protected function renderContent( $data ) {
-		$templateParser = new TemplateParser( __DIR__ );
-		// FIXME: HTML generation of these should be done in the template itself.
-		$data['_secondaryActions'] = $this->getSecondaryActionsHtml();
-		$data['_postContent'] = $this->getPostContentHtml( $data );
-		$data['_historyLinkBottom'] = $this->getHistoryLinkBottomHtml( $data );
-		echo $templateParser->processTemplate( 'content', $data );
-	}
-
-	/**
-	 * Renders pre-content (e.g. heading)
-	 * @param array $data Data used to build the page
-	 */
-	protected function renderPreContent( $data ) {
-		$templateParser = new TemplateParser( __DIR__ );
-		$data['_pageActions'] = $this->getPageActionsHtml( $data );
-		echo $templateParser->processTemplate( 'preContent', $data );
-	}
-
-	/**
 	 * Renders any content after the main content and before the secondary actions.
 	 *
 	 * @param array $data The data used to build the page
@@ -241,29 +218,18 @@ class MinervaTemplate extends BaseTemplate {
 	 * @param array $data Data used to build the page
 	 */
 	protected function renderContentWrapper( $data ) {
-		if ( $this->renderHistoryLinkBeforeContent ) {
-			echo $this->getHistoryLinkTopHtml( $data );
-		?>
-			<script>
-				if ( window.mw && mw.mobileFrontend ) { mw.mobileFrontend.emit( 'history-link-loaded' ); }
-			</script>
-		<?php
-		}
-		?>
-		<script>
-			if ( window.mw && mw.mobileFrontend ) { mw.mobileFrontend.emit( 'header-loaded' ); }
-		</script>
-		<?php
-			$this->renderPreContent( $data );
-			$this->renderContent( $data );
-			if ( !$this->renderHistoryLinkBeforeContent ) {
-				echo $this->getHistoryLinkTopHtml( $data );
-		?>
-				<script>
-					if ( window.mw && mw.mobileFrontend ) { mw.mobileFrontend.emit( 'history-link-loaded' ); }
-				</script>
-		<?php
-			}
+		$templateParser = new TemplateParser( __DIR__ );
+		// FIXME: HTML generation of these should be done in the template itself.
+		$data['_secondaryActions'] = $this->getSecondaryActionsHtml();
+		$data['_postContent'] = $this->getPostContentHtml( $data );
+		$data['_historyLinkBottom'] = $this->getHistoryLinkBottomHtml( $data );
+		$data['_historyLinkTop'] =  $this->getHistoryLinkTopHtml( $data );
+		$data['isHistoryAtTop'] = $this->renderHistoryLinkBeforeContent;
+		$data['_pageActions'] = $this->getPageActionsHtml( $data );
+		// FIXME: Why don't we have partial support?
+		$data['_preContent'] = $templateParser->processTemplate( 'preContent', $data );
+		$data['_content'] = $templateParser->processTemplate( 'content', $data );
+		echo $templateParser->processTemplate( 'contentWrapper', $data );
 	}
 
 	/**

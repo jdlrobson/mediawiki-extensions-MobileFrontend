@@ -1,0 +1,17 @@
+{{#isHistoryAtTop}}
+{{{_historyLinkTop}}}
+<script>
+	if ( window.mw && mw.mobileFrontend ) { mw.mobileFrontend.emit( 'history-link-loaded' ); }
+</script>
+{{/isHistoryAtTop}}
+<script>
+	if ( window.mw && mw.mobileFrontend ) { mw.mobileFrontend.emit( 'header-loaded' ); }
+</script>
+{{{_preContent}}}
+{{{_content}}}
+{{^isHistoryAtTop}}
+{{{_historyLinkTop}}}
+<script>
+	if ( window.mw && mw.mobileFrontend ) { mw.mobileFrontend.emit( 'history-link-loaded' ); }
+</script>
+{{/isHistoryAtTop}}
