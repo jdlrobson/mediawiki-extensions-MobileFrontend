@@ -16,16 +16,6 @@ class MinervaTemplateBeta extends MinervaTemplate {
 	protected $searchPlaceHolderMsg = 'mobile-frontend-placeholder-beta';
 
 	/**
-	 * Render available page actions
-	 * @param array $data Data used to build page actions
-	 */
-	public function renderPageActions( $data ) {
-		if ( !$this->isMainPage ) {
-			parent::renderPageActions( $data );
-		}
-	}
-
-	/**
 	 * Get category button if categories are present
 	 * @return array A map of the button's friendly name, "categories" to its
 	 *   spec if the button can be displayed.
@@ -89,7 +79,7 @@ class MinervaTemplateBeta extends MinervaTemplate {
 			<div class="pre-content">
 				<?php
 				if ( !$this->isSpecialPage ) {
-					$this->renderPageActions( $data );
+					echo $this->getPageActionsHtml( $data );
 				}
 				echo $preBodyText;
 				// FIXME: Temporary solution until we have design

@@ -83,14 +83,6 @@ class MinervaTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Returns available page actions
-	 * @return array
-	 */
-	public function getPageActions() {
-		return $this->data['page_actions'];
-	}
-
-	/**
 	 * Returns footer links
 	 * @param string $option
 	 * @return array
@@ -145,17 +137,13 @@ class MinervaTemplate extends BaseTemplate {
 
 	/**
 	 * Render available page actions
+	 * Get HTML for available page actions
 	 * @param array $data Data used to build page actions
+	 * @return string
 	 */
-	protected function renderPageActions( $data ) {
-		$actions = $this->getPageActions();
-		if ( $actions ) {
-			?><ul id="page-actions" class="hlist"><?php
-			foreach ( $actions as $key => $val ) {
-				echo $this->makeListItem( $key, $val );
-			}
-			?></ul><?php
-		}
+	protected function getPageActionsHtml( $data ) {
+		$templateParser = new TemplateParser( __DIR__ );
+		return $templateParser->processTemplate( 'pageActions', $data );
 	}
 
 	/**
@@ -296,7 +284,7 @@ class MinervaTemplate extends BaseTemplate {
 				if ( isset( $data['_old_revision_warning'] ) ) {
 					echo $data['_old_revision_warning'];
 				} elseif ( !$isSpecialPage ){
-					$this->renderPageActions( $data );
+					echo $this->getPageActionsHtml( $data );
 				}
 				echo $internalBanner;
 				?>

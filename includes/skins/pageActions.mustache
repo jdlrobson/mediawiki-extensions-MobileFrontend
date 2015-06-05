@@ -1,0 +1,9 @@
+<ul id="page-actions" class="hlist">
+	{{#page_actions}}
+	{{#components}}<li id="{{id}}"
+		{{#if itemtitle}}title="{{itemtitle}}"{{/if}}
+		class="{{class}}">
+		{{#if href}}<a href="{{href}}" title="{{title}}">{{text}}</a>{{/if}}
+	</li>{{/components}}
+	{{/page_actions}}
+</ul>

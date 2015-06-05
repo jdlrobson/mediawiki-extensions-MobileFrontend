@@ -855,7 +855,7 @@ class SkinMinerva extends SkinTemplate {
 			}
 		}
 
-		$tpl->set( 'page_actions', $menu );
+		$tpl->set( 'page_actions', $this->flattenLinkArray( $menu ) );
 	}
 
 	/**
