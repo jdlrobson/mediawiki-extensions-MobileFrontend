@@ -26,8 +26,8 @@ class MinervaTemplate extends BaseTemplate {
 	 * Renders the header content for the top chrome.
 	 * @param array $data Data used to build the page
 	 */
-	protected function makeChromeHeaderContent( $data ) {
-		echo $this->makeSearchForm( $data );
+	protected function getChromeHeaderContentHtml( $data ) {
+		return $this->makeSearchForm( $data );
 	}
 
 	/**
@@ -352,7 +352,7 @@ class MinervaTemplate extends BaseTemplate {
 	 */
 	protected function renderHeader( $data ) {
 		$this->html( 'menuButton' );
-		$this->makeChromeHeaderContent( $data );
+		echo $this->getChromeHeaderContentHtml( $data );
 		echo $data['secondaryButton'];
 	}
 
