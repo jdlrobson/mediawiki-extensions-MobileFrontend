@@ -205,34 +205,6 @@ class MinervaTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Renders any content after the main content and before the secondary actions.
-	 *
-	 * @param array $data The data used to build the page
-	 */
-	protected function getPostContentHtml( $data ) {
-		return '';
-	}
-
-	/**
-	 * Render wrapper for loading content
-	 * @param array $data Data used to build the page
-	 */
-	protected function renderContentWrapper( $data ) {
-		$templateParser = new TemplateParser( __DIR__ );
-		// FIXME: HTML generation of these should be done in the template itself.
-		$data['_secondaryActions'] = $this->getSecondaryActionsHtml();
-		$data['_postContent'] = $this->getPostContentHtml( $data );
-		$data['_historyLinkBottom'] = $this->getHistoryLinkBottomHtml( $data );
-		$data['_historyLinkTop'] =  $this->getHistoryLinkTopHtml( $data );
-		$data['isHistoryAtTop'] = $this->renderHistoryLinkBeforeContent;
-		$data['_pageActions'] = $this->getPageActionsHtml( $data );
-		// FIXME: Why don't we have partial support?
-		$data['_preContent'] = $templateParser->processTemplate( 'preContent', $data );
-		$data['_content'] = $templateParser->processTemplate( 'content', $data );
-		echo $templateParser->processTemplate( 'contentWrapper', $data );
-	}
-
-	/**
 	 * Renders the main menu only on Special:MobileMenu.
 	 * On other pages the menu is rendered via JS.
 	 * @param array [$data] Data used to build the page
@@ -263,6 +235,15 @@ class MinervaTemplate extends BaseTemplate {
 	 */
 	protected function render( $data ) {
 		$templateParser = new TemplateParser( __DIR__ );
+		// FIXME: HTML generation of these should be done in the template itself.
+		$data['_secondaryActions'] = $this->getSecondaryActionsHtml();
+		$data['_historyLinkBottom'] = $this->getHistoryLinkBottomHtml( $data );
+		$data['_historyLinkTop'] =  $this->getHistoryLinkTopHtml( $data );
+		$data['isHistoryAtTop'] = $this->renderHistoryLinkBeforeContent;
+		$data['_pageActions'] = $this->getPageActionsHtml( $data );
+		// FIXME: Why don't we have partial support?
+		$data['_preContent'] = $templateParser->processTemplate( 'preContent', $data );
+		$data['_content'] = $templateParser->processTemplate( 'content', $data );
 
 		// begin rendering
 		echo $data[ 'headelement' ];
@@ -282,7 +263,7 @@ class MinervaTemplate extends BaseTemplate {
 				</div>
 				<div id="content_wrapper">
 				<?php
-					$this->renderContentWrapper( $data );
+					echo $templateParser->processTemplate( 'contentWrapper', $data );
 				?>
 				</div>
 				<?php
