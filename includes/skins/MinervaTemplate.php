@@ -209,23 +209,26 @@ class MinervaTemplate extends BaseTemplate {
 	 * On other pages the menu is rendered via JS.
 	 * @param array [$data] Data used to build the page
 	 */
-	protected function renderMainMenu( $data ) {
+	protected function getMainMenuHtml( $data ) {
 		if ( $this->isSpecialMobileMenuPage ) {
 			$templateParser = new TemplateParser(
 				__DIR__ . '/../../resources/mobile.mainMenu/' );
 
-			echo $templateParser->processTemplate( 'menu', $data['menu_data'] );
+			return $templateParser->processTemplate( 'menu', $data['menu_data'] );
+		} else {
+			return '';
 		}
 	}
 
 	/**
 	 * Render Header elements
 	 * @param array $data Data used to build the header
+	 * @return string
 	 */
-	protected function renderHeader( $data ) {
-		$this->html( 'menuButton' );
-		echo $this->getChromeHeaderContentHtml( $data );
-		echo $data['secondaryButton'];
+	protected function getHeaderHtml( $data ) {
+		return $data['menuButton']
+			. $this->getChromeHeaderContentHtml( $data )
+			. $data['secondaryButton'];
 	}
 
 	/**
@@ -250,7 +253,7 @@ class MinervaTemplate extends BaseTemplate {
 		?>
 		<div id="mw-mf-viewport">
 			<nav id="mw-mf-page-left" class="navigation-drawer">
-				<?php $this->renderMainMenu( $data ); ?>
+				<?php echo $this->getMainMenuHtml( $data ); ?>
 			</nav>
 			<div id="mw-mf-page-center">
 				<?php
@@ -258,7 +261,7 @@ class MinervaTemplate extends BaseTemplate {
 				?>
 				<div class="header">
 					<?php
-						$this->renderHeader( $data );
+						echo $this->getHeaderHtml( $data );
 					?>
 				</div>
 				<div id="content_wrapper">

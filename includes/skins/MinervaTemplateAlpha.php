@@ -54,7 +54,7 @@ class MinervaTemplateAlpha extends MinervaTemplateBeta {
 	 * @inheritdoc
 	 * Renders a search link and branding.
 	 */
-	protected function getChromeHeaderContentHtml( $data ) {
+	protected function getHeaderHtml( $data ) {
 		$templateParser = new TemplateParser( __DIR__ );
 		$args = array(
 			'siteName' => SkinMinerva::getSitename(),
@@ -63,7 +63,8 @@ class MinervaTemplateAlpha extends MinervaTemplateBeta {
 			'mobileMenuTitle' => wfMessage( 'mobile-frontend-main-menu' )->parse()
 		);
 
-		return $templateParser->processTemplate( 'header', $args );
+		return $templateParser->processTemplate( 'header', $args )
+			. $data['secondaryButton'];
 	}
 
 	protected function getSearchAttributes() {
@@ -97,25 +98,16 @@ class MinervaTemplateAlpha extends MinervaTemplateBeta {
 	}
 
 	/**
-	 * Render Header elements
-	 * @param array $data Data used to build the header
-	 */
-	protected function renderHeader( $data ) {
-		echo $this->getChromeHeaderContentHtml( $data );
-		echo $data['secondaryButton'];
-	}
-
-	/**
 	 * In addition to the main menu, this function renders the search form on top of the menu
 	 * @inheritdoc
 	 */
-	protected function renderMainMenu( $data ) {
+	protected function getMainMenuHtml( $data ) {
 		$templateParser = new TemplateParser( __DIR__ );
 		$args = array(
 			'searchForm' => $this->makeSearchForm( $data )
 		);
-		echo $templateParser->processTemplate( 'searchForm', $args );
-		parent::renderMainMenu( $data );
+		return $templateParser->processTemplate( 'searchForm', $args )
+			. parent::getMainMenuHtml( $data );
 	}
 
 }
