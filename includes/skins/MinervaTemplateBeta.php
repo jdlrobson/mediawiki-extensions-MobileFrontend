@@ -64,33 +64,12 @@ class MinervaTemplateBeta extends MinervaTemplate {
 	}
 
 	/**
-	 * Renders the list of page actions and then the title of the page in its
-	 * container to keep LESS changes to a minimum.
-	 *
-	 * @param array $data
+	 * Renders pre-content (e.g. heading)
+	 * @param array $data Data used to build the page
 	 */
 	protected function renderPreContent( $data ) {
-		$internalBanner = $data[ 'internalBanner' ];
-		$preBodyText = isset( $data['prebodytext'] ) ? $data['prebodytext'] : '';
-
-		if ( $internalBanner || $preBodyText ) {
-
-			?>
-			<div class="pre-content">
-				<?php
-				if ( !$this->isSpecialPage ) {
-					echo $this->getPageActionsHtml( $data );
-				}
-				echo $preBodyText;
-				// FIXME: Temporary solution until we have design
-				if ( isset( $data['_old_revision_warning'] ) ) {
-					echo $data['_old_revision_warning'];
-				}
-				echo $internalBanner;
-				?>
-			</div>
-			<?php
-		}
+		$data['isBeta'] = true;
+		parent::renderPreContent( $data );
 	}
 
 	/**

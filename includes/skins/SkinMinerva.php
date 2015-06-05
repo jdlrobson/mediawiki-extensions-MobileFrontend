@@ -752,9 +752,6 @@ class SkinMinerva extends SkinTemplate {
 			}
 		}
 		$tpl->set( 'banners', $banners );
-		// These banners unlike 'banners' show inside the main content chrome underneath the
-		// page actions.
-		$tpl->set( 'internalBanner', '' );
 	}
 
 	/**
@@ -803,7 +800,7 @@ class SkinMinerva extends SkinTemplate {
 	protected function prepareWarnings( BaseTemplate $tpl ) {
 		$out = $this->getOutput();
 		if ( $out->getRequest()->getText( 'oldid' ) ) {
-			$tpl->set( '_old_revision_warning',
+			$tpl->set( 'oldRevisionWarning',
 				MobileUI::warningBox( $this->getOldRevisionHtml() ) );
 		}
 	}

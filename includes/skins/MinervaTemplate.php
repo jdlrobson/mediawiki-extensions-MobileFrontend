@@ -143,7 +143,11 @@ class MinervaTemplate extends BaseTemplate {
 	 */
 	protected function getPageActionsHtml( $data ) {
 		$templateParser = new TemplateParser( __DIR__ );
-		return $templateParser->processTemplate( 'pageActions', $data );
+		if ( isset( $data['oldRevisionWarning'] ) || $this->isSpecialPage ) {
+			return '';
+		} else {
+			return $templateParser->processTemplate( 'pageActions', $data );
+		}
 	}
 
 	/**
@@ -271,26 +275,9 @@ class MinervaTemplate extends BaseTemplate {
 	 * @param array $data Data used to build the page
 	 */
 	protected function renderPreContent( $data ) {
-		$internalBanner = $data[ 'internalBanner' ];
-		$isSpecialPage = $this->isSpecialPage;
-		$preBodyText = isset( $data['prebodytext'] ) ? $data['prebodytext'] : '';
-
-		if ( $internalBanner || $preBodyText ) {
-		?>
-		<div class="pre-content">
-			<?php
-				echo $preBodyText;
-				// FIXME: Temporary solution until we have design
-				if ( isset( $data['_old_revision_warning'] ) ) {
-					echo $data['_old_revision_warning'];
-				} elseif ( !$isSpecialPage ){
-					echo $this->getPageActionsHtml( $data );
-				}
-				echo $internalBanner;
-				?>
-		</div>
-		<?php
-		}
+		$templateParser = new TemplateParser( __DIR__ );
+		$data['_pageActions'] = $this->getPageActionsHtml( $data );
+		echo $templateParser->processTemplate( 'preContent', $data );
 	}
 
 	/**
