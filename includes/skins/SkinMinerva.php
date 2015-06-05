@@ -122,8 +122,34 @@ class SkinMinerva extends SkinTemplate {
 			// Construct mobile-friendly footer
 			$this->prepareMobileFooterLinks( $tpl );
 		}
+		$this->prepareFooterLinks( $tpl );
 
 		return $tpl;
+	}
+
+	/**
+	 * More footer nastiness. Map the footer links to a template parsable structure.
+	 * @param QuickTemplate $tpl
+	 */
+	protected function prepareFooterLinks( $tpl ) {
+		$footers = array();
+		foreach ( $tpl->data['footerlinks'] as $group => $items ) {
+			$links = array();
+			foreach ( $items as $name ) {
+				if ( isset( $tpl->data[$name] ) && $tpl->data[$name] !== '' ) {
+					$links[] = array(
+						'group' => $group,
+						'name' => $name,
+						'html' => $tpl->data[$name],
+					);
+				}
+			}
+			$footers[] = array(
+				'group' => $group,
+				'links' => $links,
+			);
+		}
+		$tpl->set( 'footers', $footers );
 	}
 
 	/**

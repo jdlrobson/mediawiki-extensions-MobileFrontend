@@ -83,15 +83,6 @@ class MinervaTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Returns footer links
-	 * @param string $option
-	 * @return array
-	 */
-	public function getFooterLinks( $option = null ) {
-		return $this->data['footerlinks'];
-	}
-
-	/**
 	 * Get attributes to create search input
 	 * @return array Array with attributes for search bar
 	 */
@@ -105,34 +96,6 @@ class MinervaTemplate extends BaseTemplate {
 			'placeholder' =>  wfMessage( $this->searchPlaceHolderMsg )->text(),
 		);
 		return $searchBox;
-	}
-
-	/**
-	 * Render Footer elements
-	 * @param array $data Data used to build the footer
-	 */
-	protected function renderFooter( $data ) {
-		?>
-		<div id="footer">
-			<?php
-				foreach ( $this->getFooterLinks() as $category => $links ) {
-			?>
-				<ul class="footer-<?php echo $category; ?>">
-					<?php
-						foreach ( $links as $link ) {
-							if ( isset( $this->data[$link] ) && $this->data[$link] !== '' ) {
-								echo Html::openElement( 'li', array( 'id' => "footer-{$category}-{$link}" ) );
-								$this->html( $link );
-								echo Html::closeElement( 'li' );
-							}
-						}
-					?>
-				</ul>
-			<?php
-				}
-			?>
-		</div>
-		<?php
 	}
 
 	/**
@@ -357,7 +320,7 @@ class MinervaTemplate extends BaseTemplate {
 				?>
 				</div>
 				<?php
-					$this->renderFooter( $data );
+					echo $templateParser->processTemplate( 'footer', $data );
 				?>
 			</div>
 		</div>
