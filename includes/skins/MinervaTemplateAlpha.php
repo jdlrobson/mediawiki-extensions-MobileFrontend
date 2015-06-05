@@ -101,13 +101,13 @@ class MinervaTemplateAlpha extends MinervaTemplateBeta {
 	 * In addition to the main menu, this function renders the search form on top of the menu
 	 * @inheritdoc
 	 */
-	protected function getMainMenuHtml( $data ) {
+	protected function renderMainMenu( $data ) {
 		$templateParser = new TemplateParser( __DIR__ );
 		$args = array(
 			'searchForm' => $this->makeSearchForm( $data )
 		);
-		return $templateParser->processTemplate( 'searchForm', $args )
-			. parent::getMainMenuHtml( $data );
+		echo $templateParser->processTemplate( 'searchForm', $args );
+		parent::renderMainMenu( $data );
 	}
 
 }

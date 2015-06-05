@@ -247,39 +247,12 @@ class MinervaTemplate extends BaseTemplate {
 		// FIXME: Why don't we have partial support?
 		$data['_preContent'] = $templateParser->processTemplate( 'preContent', $data );
 		$data['_content'] = $templateParser->processTemplate( 'content', $data );
+		$data['_mainMenu'] = $this->getMainMenuHtml( $data );
+		$data['_banners'] = $templateParser->processTemplate( 'banners', $data );
+		$data['_header'] = $this->getHeaderHtml( $data );
+		$data['_footer'] = $templateParser->processTemplate( 'footer', $data );
+		$data['_contentWrapper'] = $templateParser->processTemplate( 'contentWrapper', $data );
 
-		// begin rendering
-		echo $data[ 'headelement' ];
-		?>
-		<div id="mw-mf-viewport">
-			<nav id="mw-mf-page-left" class="navigation-drawer">
-				<?php echo $this->getMainMenuHtml( $data ); ?>
-			</nav>
-			<div id="mw-mf-page-center">
-				<?php
-					echo $templateParser->processTemplate( 'banners', $data );
-				?>
-				<div class="header">
-					<?php
-						echo $this->getHeaderHtml( $data );
-					?>
-				</div>
-				<div id="content_wrapper">
-				<?php
-					echo $templateParser->processTemplate( 'contentWrapper', $data );
-				?>
-				</div>
-				<?php
-					echo $templateParser->processTemplate( 'footer', $data );
-				?>
-			</div>
-		</div>
-		<?php
-			echo $data['reporttime'];
-			echo $data['bottomscripts'];
-		?>
-		</body>
-		</html>
-		<?php
+		echo $templateParser->processTemplate( 'minerva', $data );
 	}
 }
