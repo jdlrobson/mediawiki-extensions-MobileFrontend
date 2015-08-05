@@ -1068,7 +1068,7 @@ class SkinMinerva extends SkinTemplate {
 		$modules['legacy'] = array();
 
 		// Add minerva specific modules
-		$modules['head'] = 'mobile.head';
+		$modules['head'] = 'skins.minerva.scripts.top';
 		// Define all the modules that should load on the mobile site and their dependencies.
 		// Do not add mobules here.
 		$modules['stable'] = 'skins.minerva.scripts';
@@ -1077,7 +1077,7 @@ class SkinMinerva extends SkinTemplate {
 		$modules['watch'] = array();
 		if ( $this->isAllowedPageAction( 'watch' ) ) {
 			// Explicitly add the mobile watchstar code.
-			$modules['watch'] = array( 'mobile.watchstar.init' );
+			$modules['watch'] = array( 'skins.minerva.watchstar' );
 		}
 
 		if ( $this->isAllowedPageAction( 'edit' ) ) {

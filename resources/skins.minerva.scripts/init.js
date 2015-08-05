@@ -128,4 +128,5 @@
 				.appendTo( M.getCurrentPage().getLeadSectionElement() );
 		}
 	}
+
 }( mw.mobileFrontend, jQuery ) );
