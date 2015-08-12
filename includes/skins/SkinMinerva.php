@@ -1081,19 +1081,18 @@ class SkinMinerva extends SkinTemplate {
 		}
 
 		if ( $this->isAllowedPageAction( 'edit' ) ) {
-			$modules['editor'] = array( 'mobile.editor' );
+			$modules['editor'] = array( 'skins.minerva.editor' );
 		}
 
 		// add the browse module if the page has a tag assigned to it
 		if ( $this->getBrowseTags( $this->getTitle() ) ) {
-			$modules['browse'] = array( 'mobile.browse' );
+			$modules['browse'] = array( 'skins.minerva.browse' );
 		}
 
 		$modules['context'] = $this->getContextSpecificModules();
 
 		if ( $this->isMobileMode ) {
-			$modules['toggling'] = array( 'mobile.toggling' );
-			$modules['eventlogging'] = array( 'mobile.loggingSchemas' );
+			$modules['toggling'] = array( 'skins.minerva.toggling' );
 		}
 		$modules['site'] = 'mobile.site';
 
