@@ -6,7 +6,8 @@
 		"Hogan": true,
 		"QUnit": true,
 		"mw": true,
-		"OO": true
+		"OO": true,
+		"OOO": true
 	},
 
 	"browser": true,

@@ -4,15 +4,40 @@
 ( function ( M ) {
 
 	/**
+	 * Utility library to help us make MobileFrontend use OO whilst we wait for upstream changes.
+	 *
+	 * @class OOO
+	 * @singleton
+	 */
+	OOO = {
+		/**
+		 * Extends a childClass from a parentClass with new methods and member properties.
+		 * @method
+		 *
+		 * @param {Function} childClass to inherit
+		 * @param {Function} parentClass to inherit from
+		 * @param {Object} prototype Prototype that should be incorporated into the new Class.
+		 * @returns {Function}
+		 */
+		extend: function ( childClass, parentClass, prototype ) {
+			var key;
+			OO.inheritClass( childClass, parentClass );
+			for ( key in prototype ) {
+				childClass.prototype[key] = prototype[key];
+			}
+			return childClass;
+		}
+	};
+
+	/**
 	 * Extends a class with new methods and member properties.
 	 *
 	 * @param {Object} prototype Prototype that should be incorporated into the new Class.
-	 * @method
+	 * @ignore
 	 * @return {Class}
 	 */
-	function extend( prototype ) {
-		var key,
-			Parent = this;
+	function extendMixin( prototype ) {
+		var Parent = this;
 
 		/**
 		 * @ignore
@@ -20,11 +45,8 @@
 		function Child() {
 			return Parent.apply( this, arguments );
 		}
-		OO.inheritClass( Child, Parent );
-		for ( key in prototype ) {
-			Child.prototype[key] = prototype[key];
-		}
-		Child.extend = extend;
+		OOO.extend( Child, Parent, prototype );
+		Child.extend = extendMixin;
 		// FIXME: Use OOJS super here instead.
 		Child.prototype._parent = Parent.prototype;
 		return Child;
@@ -46,7 +68,9 @@
 	 * @method
 	 */
 	Class.prototype.initialize = function () {};
-	Class.extend = extend;
+	Class.extend = extendMixin;
+	mw.log.deprecate( Class, 'extend', extendMixin,
+		'Do not use Class.extend. Please use OOO.extend and inherit from OO.EventEmitter or OO.initClass instead.' );
 
 	M.define( 'Class', Class );
 

@@ -29,6 +29,7 @@
 	 */
 	Router = Class.extend( {} );
 
+	/** @inheritdoc */
 	Router.prototype.initialize = function () {
 		var self = this;
 		Class.prototype.initialize.apply( this, arguments );
