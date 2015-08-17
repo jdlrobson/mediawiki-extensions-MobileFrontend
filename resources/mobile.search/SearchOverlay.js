@@ -20,10 +20,10 @@
 	 * @uses Icon
 	 */
 	SearchOverlay = Overlay.extend( {
-		templatePartials: {
+		templatePartials: $.extend( {}, Overlay.prototype.templatePartials, {
 			anchor: Anchor.prototype.template,
 			icon: Icon.prototype.template
-		},
+		} ),
 		className: 'overlay search-overlay',
 		template: mw.template.get( 'mobile.search', 'SearchOverlay.hogan' ),
 		/**
@@ -44,7 +44,7 @@
 		 * @cfg {String} defaults.action The value of wgScript
 		 * @cfg {Object} defaults.feedback options for the feedback link below the search results
 		 */
-		defaults: {
+		defaults: $.extend( {}, Overlay.prototype.defaults, {
 			clearIcon: new Icon( {
 				tagName: 'button',
 				name: 'clear',
@@ -68,7 +68,7 @@
 				} ).options,
 				prompt: mw.msg( 'mobile-frontend-search-feedback-prompt' )
 			}
-		},
+		} ),
 		/**
 		 * @inheritdoc
 		 */

@@ -31,7 +31,7 @@
 			 * generating header buttons. Default list includes an 'add' button, which opens
 			 * a new talk overlay.
 			 */
-			defaults: {
+			defaults: $.extend( {}, Overlay.prototype.defaults, {
 				headings: undefined,
 				heading: '<strong>' + mw.msg( 'mobile-frontend-talk-overlay-header' ) + '</strong>',
 				leadHeading: mw.msg( 'mobile-frontend-talk-overlay-lead-header' ),
@@ -46,7 +46,7 @@
 					additionalClassNames: 'footer-link talk-fullpage',
 					label: mw.msg( 'mobile-frontend-talk-fullpage' )
 				} ).options
-			},
+			} ),
 
 			/** @inheritdoc */
 			postRender: function () {

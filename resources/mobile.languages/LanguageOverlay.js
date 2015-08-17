@@ -19,10 +19,10 @@
 		 * @cfg {String} defaults.placeholder Placeholder text for the search input.
 		 * @cfg {Object} defaults.languages a list of languages with keys {langname, lang, title, url}
 		 */
-		defaults: {
+		defaults: $.extend( {}, Overlay.prototype.defaults, {
 			heading: mw.msg( 'mobile-frontend-language-heading' ),
 			placeholder: mw.msg( 'mobile-frontend-language-site-choose' )
-		},
+		} ),
 		/**
 		 * @inheritdoc
 		 */
@@ -30,9 +30,9 @@
 		/**
 		 * @inheritdoc
 		 */
-		templatePartials: {
+		templatePartials: $.extend( {}, Overlay.prototype.templatePartials, {
 			content: mw.template.get( 'mobile.languages', 'LanguageOverlay.hogan' )
-		},
+		} ),
 		/**
 		 * @inheritdoc
 		 */

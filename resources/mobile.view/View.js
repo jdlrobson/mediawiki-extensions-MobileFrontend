@@ -159,8 +159,6 @@
 			var self = this;
 
 			Class.prototype.initialize.apply( this, arguments );
-			this.defaults = $.extend( {}, this._parent.defaults, this.defaults );
-			this.templatePartials = $.extend( {}, this._parent.templatePartials, this.templatePartials );
 			options = $.extend( {}, this.defaults, options );
 			this.options = options;
 			// Assign a unique id for dom events binding/unbinding

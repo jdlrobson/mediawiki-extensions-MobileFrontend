@@ -47,8 +47,6 @@
 		}
 		OOO.extend( Child, Parent, prototype );
 		Child.extend = extendMixin;
-		// FIXME: Use OOJS super here instead.
-		Child.prototype._parent = Parent.prototype;
 		return Child;
 	}
 
