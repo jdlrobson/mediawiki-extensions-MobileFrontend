@@ -1,14 +1,14 @@
 ( function ( M, $ ) {
 
 	var Api, api,
-		EventEmitter = M.require( 'eventemitter' );
+		Class = M.require( 'Class' );
 
 	/**
 	 * JavaScript wrapper for a horrible API. Use to retrieve things.
 	 * @class Api
-	 * @extends EventEmitter
+	 * @extends Class
 	 */
-	Api = EventEmitter.extend( mw.Api.prototype ).extend( {
+	Api = Class.extend( mw.Api.prototype ).extend( {
 		/**
 		 * @property {String} apiUrl
 		 * URL to the api endpoint (api.php)
@@ -20,7 +20,7 @@
 		 */
 		initialize: function () {
 			mw.Api.apply( this, arguments );
-			EventEmitter.prototype.initialize.apply( this, arguments );
+			Class.prototype.initialize.apply( this, arguments );
 			this.requests = [];
 			this.tokenCache = {};
 		},

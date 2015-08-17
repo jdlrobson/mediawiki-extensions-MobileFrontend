@@ -236,6 +236,9 @@ $wgMinervaStyleModules = array(
 
 $wgResourceModules = array_merge( $wgResourceModules, array(
 	'mobile.modules' => $wgMFResourceFileModuleBoilerplate + array(
+		'dependencies' => array(
+			'oojs',
+		),
 		'scripts' => array(
 			'resources/mobile.modules/modules.js',
 		),
@@ -247,7 +250,6 @@ $wgResourceModules = array_merge( $wgResourceModules, array(
 		),
 		'scripts' => array(
 			'resources/mobile.oo/Class.js',
-			'resources/mobile.oo/eventemitter.js',
 		),
 	),
 	'mobile.view' => $wgMFResourceFileModuleBoilerplate + array(

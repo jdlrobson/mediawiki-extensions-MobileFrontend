@@ -36,8 +36,11 @@
 	 * @class Class
 	 */
 	function Class() {
+		OO.EventEmitter.call( this );
 		this.initialize.apply( this, arguments );
 	}
+	OO.mixinClass( Class, OO.EventEmitter );
+
 	/**
 	 * Constructor, if you override it, use _super().
 	 * @method

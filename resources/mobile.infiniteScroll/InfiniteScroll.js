@@ -1,6 +1,6 @@
 ( function ( M, $ ) {
 
-	var EventEmitter = M.require( 'eventemitter' ),
+	var Class = M.require( 'Class' ),
 		InfiniteScroll;
 
 	/**
@@ -8,6 +8,7 @@
 	 * element.
 	 *
 	 * @class InfiniteScroll
+	 * @extends Class
 	 *
 	 * Use this class in a view to help it do infinite scrolling.
 	 *
@@ -53,14 +54,14 @@
 	 *       } );
 	 *     </code>
 	 */
-	InfiniteScroll = EventEmitter.extend( {
+	InfiniteScroll = Class.extend( {
 		/**
 		 * Constructor.
 		 * @param {Number} threshold distance in pixels used to calculate if scroll
 		 * position is near the end of the $el
 		 */
 		initialize: function ( threshold ) {
-			EventEmitter.prototype.initialize.apply( this, arguments );
+			Class.prototype.initialize.apply( this, arguments );
 			this.threshold = threshold || 100;
 			this.enabled = true;
 			this._bindScroll();

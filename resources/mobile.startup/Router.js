@@ -1,8 +1,8 @@
 // FIXME: Merge this code with OverlayManager
 ( function ( M, $ ) {
 
-	var key, router,
-		EventEmitter = M.require( 'eventemitter' );
+	var Router,
+		Class = M.require( 'Class' );
 
 	/**
 	 * Does hash match entry.path?
@@ -25,11 +25,13 @@
 	/**
 	 * Provides navigation routing and location information
 	 * @class Router
-	 * @uses EventEmitter
+	 * @extends Class
 	 */
-	function Router() {
+	Router = Class.extend( {} );
+
+	Router.prototype.initialize = function () {
 		var self = this;
-		EventEmitter.prototype.initialize.apply( this, arguments );
+		Class.prototype.initialize.apply( this, arguments );
 		// use an object instead of an array for routes so that we don't
 		// duplicate entries that already exist
 		this.routes = {};
@@ -64,13 +66,7 @@
 
 			self._oldHash = self.getPath();
 		} );
-	}
-
-	for ( key in EventEmitter.prototype ) {
-		if ( EventEmitter.prototype.hasOwnProperty( key ) ) {
-			Router.prototype[ key ] = EventEmitter.prototype[ key ];
-		}
-	}
+	};
 
 	/**
 	 * Check the current route and run appropriate callback if it matches.
@@ -166,9 +162,7 @@
 		return 'onhashchange' in window;
 	};
 
-	router = new Router();
-
-	M.define( 'router', router );
+	M.define( 'router', new Router() );
 	M.define( 'Router', Router );
 
 }( mw.mobileFrontend, jQuery ) );

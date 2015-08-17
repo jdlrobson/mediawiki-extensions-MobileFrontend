@@ -1,6 +1,6 @@
 ( function ( M, $ ) {
 
-	var EventEmitter = M.require( 'eventemitter' ),
+	var Class = M.require( 'Class' ),
 		View,
 		// Cached regex to split keys for `delegate`.
 		delegateEventSplitter = /^(\S+)\s*(.*)$/,
@@ -71,7 +71,7 @@
 	 *     </code>
 	 *
 	 * @class View
-	 * @extends EventEmitter
+	 * @extends Class
 	 * @param {Object} options Options for the view, containing the el or
 	 * template data or any other information you want to use in the view.
 	 * Example:
@@ -86,7 +86,7 @@
 	 *     section.appendTo( 'body' );
 	 *     </pre>
 	 */
-	View = EventEmitter.extend( {
+	View = Class.extend( {
 		/**
 		 * A css class to apply to the containing element of the View.
 		 * @property {String} className
@@ -158,7 +158,7 @@
 		initialize: function ( options ) {
 			var self = this;
 
-			EventEmitter.prototype.initialize.apply( this, arguments );
+			Class.prototype.initialize.apply( this, arguments );
 			this.defaults = $.extend( {}, this._parent.defaults, this.defaults );
 			this.templatePartials = $.extend( {}, this._parent.templatePartials, this.templatePartials );
 			options = $.extend( {}, this.defaults, options );

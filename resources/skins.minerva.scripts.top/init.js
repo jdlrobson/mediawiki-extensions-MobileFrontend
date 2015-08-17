@@ -82,9 +82,9 @@
 			} );
 		}
 	}
-
-	// bind events
 	M.define( 'mainMenu', mainMenu );
+
+	// setup and bind events
 	M.on( 'history-link-loaded', initHistoryLink );
 	M.on( 'header-loaded', function () {
 		// Now we have a main menu button register it.
