@@ -1,16 +1,18 @@
  ( function ( M, $ ) {
 
-	var Class = M.require( 'Class' ),
-		Image = M.require( 'modules/bannerImage/Image' ),
-		MobileViewBannerImageRepository;
+	var Image = M.require( 'modules/bannerImage/Image' );
 
 	/**
 	 * Uses the mobileview API to get images that can be used as banner images for a page.
 	 *
 	 * @class
+	 * @extends OO.EventEmitter
 	 */
-	MobileViewBannerImageRepository = Class.extend( {
+	function MobileViewBannerImageRepository( options ) {
+		this.initialize( options );
+	}
 
+	OOO.extend( MobileViewBannerImageRepository, OO.EventEmitter, {
 		/**
 		 * @constructor
 		 * @param {mw.Api} api A MediaWiki API client

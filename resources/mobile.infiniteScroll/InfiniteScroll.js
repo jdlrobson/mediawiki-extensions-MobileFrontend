@@ -1,14 +1,11 @@
 ( function ( M, $ ) {
 
-	var Class = M.require( 'Class' ),
-		InfiniteScroll;
-
 	/**
 	 * Class to assist a view in implementing infinite scrolling on some DOM
 	 * element.
 	 *
 	 * @class InfiniteScroll
-	 * @extends Class
+	 * @extends OO.EventEmitter
 	 *
 	 * Use this class in a view to help it do infinite scrolling.
 	 *
@@ -54,14 +51,18 @@
 	 *       } );
 	 *     </code>
 	 */
-	InfiniteScroll = Class.extend( {
+	function InfiniteScroll( options ) {
+		this.initialize( options );
+	}
+
+	OOO.extend( InfiniteScroll, OO.EventEmitter, {
 		/**
 		 * Constructor.
 		 * @param {Number} threshold distance in pixels used to calculate if scroll
 		 * position is near the end of the $el
 		 */
 		initialize: function ( threshold ) {
-			Class.prototype.initialize.apply( this, arguments );
+			OO.EventEmitter.call( this );
 			this.threshold = threshold || 100;
 			this.enabled = true;
 			this._bindScroll();

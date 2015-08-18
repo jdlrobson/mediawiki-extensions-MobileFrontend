@@ -1,9 +1,7 @@
 ( function ( M, $ ) {
 
-	var
-		Class = M.require( 'Class' ),
-		router = M.require( 'router' ),
-		OverlayManager, overlayManager;
+	var overlayManager
+		router = M.require( 'router' );
 
 	/**
 	 * Manages opening and closing overlays when the URL hash changes to one
@@ -13,11 +11,15 @@
 	 * and refresh behavior.
 	 *
 	 * @class OverlayManager
-	 * @extends Class
+	 * @extends OO.EventEmitter
 	 */
-	OverlayManager = Class.extend( {
+	function OverlayManager( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( OverlayManager, OO.EventEmitter, {
 		/** @inheritdoc */
 		initialize: function ( router ) {
+			OO.EventEmitter.call( this );
 			router.on( 'route', $.proxy( this, '_checkRoute' ) );
 			this.router = router;
 			// use an object instead of an array for entries so that we don't

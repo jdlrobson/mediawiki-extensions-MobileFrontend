@@ -50,26 +50,6 @@
 		return Child;
 	}
 
-	/**
-	 * An extensible program-code-template for creating objects
-	 *
-	 * @class Class
-	 */
-	function Class() {
-		OO.EventEmitter.call( this );
-		this.initialize.apply( this, arguments );
-	}
-	OO.mixinClass( Class, OO.EventEmitter );
-
-	/**
-	 * Constructor, if you override it, use _super().
-	 * @method
-	 */
-	Class.prototype.initialize = function () {};
-	Class.extend = extendMixin;
-	mw.log.deprecate( Class, 'extend', extendMixin,
-		'Do not use Class.extend. Please use OOO.extend and inherit from OO.EventEmitter or OO.initClass instead.' );
-
-	M.define( 'Class', Class );
+	M.define( 'mobile.oo/extendMixin', extendMixin );
 
 }( mw.mobileFrontend ) );

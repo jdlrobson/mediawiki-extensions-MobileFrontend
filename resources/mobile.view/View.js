@@ -1,7 +1,6 @@
 ( function ( M, $ ) {
 
-	var Class = M.require( 'Class' ),
-		View,
+	var
 		// Cached regex to split keys for `delegate`.
 		delegateEventSplitter = /^(\S+)\s*(.*)$/,
 		idCounter = 0;
@@ -71,7 +70,7 @@
 	 *     </code>
 	 *
 	 * @class View
-	 * @extends Class
+	 * @extends OO.EventEmitter
 	 * @param {Object} options Options for the view, containing the el or
 	 * template data or any other information you want to use in the view.
 	 * Example:
@@ -86,7 +85,11 @@
 	 *     section.appendTo( 'body' );
 	 *     </pre>
 	 */
-	View = Class.extend( {
+	function View( options ) {
+		this.initialize( options );
+	}
+
+	OOO.extend( View, OO.EventEmitter, {
 		/**
 		 * A css class to apply to the containing element of the View.
 		 * @property {String} className
@@ -158,7 +161,7 @@
 		initialize: function ( options ) {
 			var self = this;
 
-			Class.prototype.initialize.apply( this, arguments );
+			OO.EventEmitter.call( this );
 			options = $.extend( {}, this.defaults, options );
 			this.options = options;
 			// Assign a unique id for dom events binding/unbinding
@@ -332,6 +335,8 @@
 		}
 
 	} );
+	mw.log.deprecate( View, 'extend', M.require( 'mobile.oo/extendMixin' ),
+		'View.extend is deprecated. Please use OOO.extend' );
 
 	$.each( [
 		'append',

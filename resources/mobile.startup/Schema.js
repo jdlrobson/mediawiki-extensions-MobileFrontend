@@ -1,6 +1,5 @@
 ( function ( M, $ ) {
-	var Schema,
-		Class = M.require( 'Class' ),
+	var
 		settings = M.require( 'settings' ),
 		BEACON_SETTING_KEY = 'mobileFrontend/beacon';
 
@@ -53,9 +52,13 @@
 
 	/**
 	 * @class Schema
-	 * @extends Class
+	 * @extends OO.EventEmitter
 	 */
-	Schema = Class.extend( {
+	function Schema( options, schemaName ) {
+		this.initialize( options, schemaName );
+	}
+
+	OOO.extend( Schema, OO.EventEmitter, {
 		/**
 		 * A set of defaults to log to the schema
 		 *
@@ -108,7 +111,7 @@
 				throw new Error( 'Schema needs to define a schema name.' );
 			}
 			this.defaults = defaults;
-			Class.prototype.initialize.apply( this, arguments );
+			OO.EventEmitter.call( this );
 		},
 		/**
 		 * Actually log event via EventLogging
@@ -161,7 +164,8 @@
 
 		deleteBeacon();
 	};
-
+	mw.log.deprecate( Schema, 'extend', M.require( 'mobile.oo/extendMixin' ),
+		'Schema.extend is deprecated. Please use OOO.extend' );
 	M.define( 'Schema', Schema );
 
 }( mw.mobileFrontend, jQuery ) );

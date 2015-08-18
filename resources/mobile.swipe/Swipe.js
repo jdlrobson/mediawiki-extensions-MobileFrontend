@@ -1,8 +1,4 @@
 ( function ( M, $ ) {
-
-	var Class = M.require( 'Class' ),
-		Swipe;
-
 	/**
 	 * Class to assist a view in implementing swipe gestures on a specific element
 	 *
@@ -50,14 +46,17 @@
 	 *       } );
 	 *     </code>
 	 */
-	Swipe = Class.extend( {
+	function Swipe( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Swipe, OO.EventEmitter, {
 		/**
 		 * Constructor.
 		 * @param {Number} minDistance minimal distance in pixel between touchstart and touchend
 		 * to be recognized as a swipe event. Default: 200
 		 */
 		initialize: function ( minDistance ) {
-			Class.prototype.initialize.apply( this, arguments );
+			OO.EventEmitter.call( this );
 			this.minDistance = minDistance || 200;
 		},
 		/**

@@ -1,16 +1,19 @@
 ( function ( M, mw, $ ) {
 
-	var Class = M.require( 'Class' ),
-		SchemaMobileWebSearch = M.require( 'loggingSchemas/SchemaMobileWebSearch' ),
-		MobileWebSearchLogger;
+	var SchemaMobileWebSearch = M.require( 'loggingSchemas/SchemaMobileWebSearch' );
 
 	/**
 	 * Coordinates the logging of MobileWebSchema events.
 	 * Implements schema defined at https://meta.wikimedia.org/wiki/Schema:MobileWebSearch
 	 *
 	 * @class
+	 * @extends OO.EventEmitter
 	 */
-	MobileWebSearchLogger = Class.extend( {
+	function MobileWebSearchLogger( options ) {
+		this.initialize( options );
+	}
+
+	OOO.extend( MobileWebSearchLogger, OO.EventEmitter, {
 
 		/**
 		 * @constructor

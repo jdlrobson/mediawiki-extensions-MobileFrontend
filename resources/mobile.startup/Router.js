@@ -1,9 +1,6 @@
 // FIXME: Merge this code with OverlayManager
 ( function ( M, $ ) {
 
-	var Router,
-		Class = M.require( 'Class' );
-
 	/**
 	 * Does hash match entry.path?
 	 * @method
@@ -25,14 +22,17 @@
 	/**
 	 * Provides navigation routing and location information
 	 * @class Router
-	 * @extends Class
+	 * @extends OO.EventEmitter
 	 */
-	Router = Class.extend( {} );
+	function Router( options ) {
+		this.initialize( options );
+	}
+	OO.inheritClass( Router, OO.EventEmitter );
 
 	/** @inheritdoc */
 	Router.prototype.initialize = function () {
 		var self = this;
-		Class.prototype.initialize.apply( this, arguments );
+		OO.EventEmitter.call( this );
 		// use an object instead of an array for routes so that we don't
 		// duplicate entries that already exist
 		this.routes = {};

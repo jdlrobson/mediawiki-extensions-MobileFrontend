@@ -1,14 +1,16 @@
 ( function ( M, $ ) {
 
-	var Api, api,
-		Class = M.require( 'Class' );
+	var api;
 
 	/**
 	 * JavaScript wrapper for a horrible API. Use to retrieve things.
 	 * @class Api
-	 * @extends Class
+	 * @extends OO.EventEmitter
 	 */
-	Api = Class.extend( mw.Api.prototype ).extend( {
+	function Api( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Api, OO.EventEmitter, $.extend( {}, mw.Api.prototype, {
 		/**
 		 * @property {String} apiUrl
 		 * URL to the api endpoint (api.php)
@@ -20,7 +22,7 @@
 		 */
 		initialize: function () {
 			mw.Api.apply( this, arguments );
-			Class.prototype.initialize.apply( this, arguments );
+			OO.EventEmitter.call( this );
 			this.requests = [];
 			this.tokenCache = {};
 		},
@@ -118,8 +120,9 @@
 			}
 			return origin;
 		}
-	} );
-
+	} ) );
+	mw.log.deprecate( Api, 'extend', M.require( 'mobile.oo/extendMixin' ),
+		'Api.extend is deprecated. Please use OOO.extend' );
 	api = new Api();
 	api.Api = Api;
 
