@@ -18,7 +18,10 @@
 	 * @uses Icon
 	 * @uses Button
 	 */
-	Overlay = View.extend( {
+	function Overlay( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Overlay, View, {
 		/**
 		 * Identify whether the element contains position fixed elements
 		 * @property {Boolean}
@@ -314,6 +317,8 @@
 			this.$( className ).removeClass( 'hidden' );
 		}
 	} );
+	mw.log.deprecate( Overlay, 'extend', M.require( 'mobile.oo/extendMixin' ),
+		'Overlay.extend is deprecated. Please use OOO.extend' );
 
 	M.define( 'Overlay', Overlay );
 

@@ -9,7 +9,10 @@
 	 * @class FontChanger
 	 * @extends View
 	 */
-	FontChanger = View.extend( {
+	function FontChanger( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( FontChanger, View, {
 		/**
 		 * @cfg {Object} defaults Default options hash.
 		 * @cfg {Object} defaults.viewLink Anchor options for a link to wikidata page.

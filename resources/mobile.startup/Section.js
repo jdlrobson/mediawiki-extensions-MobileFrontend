@@ -9,7 +9,10 @@
 	 * @class Section
 	 * @extends View
 	 */
-	Section = View.extend( {
+	function Section( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Section, View, {
 		template: mw.template.get( 'mobile.startup', 'Section.hogan' ),
 		/**
 		 * @cfg {Object} defaults Default options hash.

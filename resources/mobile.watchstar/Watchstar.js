@@ -27,7 +27,10 @@
 	 * @uses WatchstarApi
 	 * @uses Toast
 	 */
-	Watchstar = View.extend( {
+	function Watchstar( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Watchstar, View, {
 		/**
 		 * @inheritdoc
 		 */

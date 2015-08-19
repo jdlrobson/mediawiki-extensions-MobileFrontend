@@ -9,7 +9,10 @@
 	 * @class PageList
 	 * @extends View
 	 */
-	PageList = View.extend( {
+	function PageList( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( PageList, View, {
 		/**
 		 * @cfg {Object} defaults Default options hash.
 		 * @cfg {Boolean} defaults.imagesDisabled whether to show images or not.
@@ -68,6 +71,8 @@
 			item: mw.template.get( 'mobile.pagelist', 'PageListItem.hogan' )
 		}
 	} );
+	mw.log.deprecate( PageList, 'extend', M.require( 'mobile.oo/extendMixin' ),
+		'PageList.extend is deprecated. Please use OOO.extend' );
 
 	M.define( 'PageList', PageList );
 

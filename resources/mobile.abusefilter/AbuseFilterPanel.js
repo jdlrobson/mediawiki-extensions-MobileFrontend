@@ -12,7 +12,10 @@
 	 * @uses AbuseFilterOverlay
 	 * FIXME: should extend Panel not View. Or the name should be changed to something meaningful.
 	 */
-	AbuseFilterPanel = View.extend( {
+	function AbuseFilterPanel( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( AbuseFilterPanel, View, {
 		/**
 		 * @cfg {Object} defaults Default options hash.
 		 * @cfg {String} defaults.readMoreMsg A caption for the button allowing the user to read

@@ -12,7 +12,10 @@
 	 * @uses Section
 	 * @extends View
 	 */
-	Page = View.extend( {
+	function Page( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Page, View, {
 		/**
 		 * @cfg {Object} defaults Default options hash.
 		 * @cfg {Number} defaults.id Page ID. The default value of 0 represents a new page.

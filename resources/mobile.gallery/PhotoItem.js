@@ -7,7 +7,10 @@
 	 * @class PhotoItem
 	 * @extends View
 	 */
-	PhotoItem = View.extend( {
+	function PhotoItem( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( PhotoItem, View, {
 		template: mw.template.get( 'mobile.gallery', 'PhotoItem.hogan' ),
 		tagName: 'li'
 	} );

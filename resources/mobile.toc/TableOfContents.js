@@ -12,7 +12,10 @@
 	 * @uses Icon
 	 * @uses SchemaMobileWebClickTracking
 	 */
-	TableOfContents = View.extend( {
+	function TableOfContents( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( TableOfContents, View, {
 		templatePartials: {
 			tocHeading: mw.template.get( 'mobile.toc', 'heading.hogan' )
 		},

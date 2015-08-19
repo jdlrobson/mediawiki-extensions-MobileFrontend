@@ -10,7 +10,10 @@
 	 * @class Checkbox
 	 * @extends View
 	 */
-	Checkbox = View.extend( {
+	function Checkbox( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Checkbox, View, {
 		template: mw.template.get( 'mobile.special.mobileoptions.scripts', 'Checkbox.hogan' ),
 		/**
 		 * Save the current state of the checkbox to the settings

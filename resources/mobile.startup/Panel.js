@@ -8,7 +8,10 @@
 	 * @class Panel
 	 * @extends View
 	 */
-	Panel = View.extend( {
+	function Panel( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Panel, View, {
 		/** @inheritdoc */
 		className: 'panel',
 		// in milliseconds
@@ -78,7 +81,8 @@
 			}
 		}
 	} );
-
+	mw.log.deprecate( Panel, 'extend', M.require( 'mobile.oo/extendMixin' ),
+		'Panel.extend is deprecated. Please use OOO.extend' );
 	M.define( 'Panel', Panel );
 
 }( mw.mobileFrontend ) );

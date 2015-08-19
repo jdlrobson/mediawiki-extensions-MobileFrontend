@@ -12,7 +12,10 @@
 	 * @uses Browser
 	 * @uses Page
 	 */
-	Skin = View.extend( {
+	function Skin( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Skin, View, {
 		/**
 		 * @inheritdoc
 		 * Skin contains components that we do not control

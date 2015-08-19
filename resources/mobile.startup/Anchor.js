@@ -8,7 +8,10 @@
 	 * @class Anchor
 	 * @extends View
 	 */
-	Anchor = View.extend( {
+	function Anchor( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Anchor, View, {
 		/** @inheritdoc */
 		isTemplateMode: true,
 		/**

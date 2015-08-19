@@ -9,7 +9,10 @@
 	 * @class MainMenu
 	 * @extends View
 	 */
-	MainMenu = View.extend( {
+	function MainMenu( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( MainMenu, View, {
 		/** @inheritdoc */
 		isTemplateMode: true,
 		/** @inheritdoc */

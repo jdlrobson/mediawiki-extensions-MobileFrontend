@@ -10,7 +10,10 @@
 	 * @class Thumbnail
 	 * @extends View
 	 */
-	Thumbnail = View.extend( {
+	function Thumbnail( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Thumbnail, View, {
 		/**
 		 * @cfg {Object} defaults options
 		 * @cfg {String} defaults.filename uri decoded filename including File: prefix associated with thumbnail

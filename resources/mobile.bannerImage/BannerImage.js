@@ -31,7 +31,10 @@
 	 * @class BannerImage
 	 * @extends View
 	 */
-	BannerImage = View.extend( {
+	function BannerImage( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( BannerImage, View, {
 		className: 'banner-image-container banner-container',
 
 		/**

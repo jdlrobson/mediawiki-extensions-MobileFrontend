@@ -8,7 +8,10 @@
 	 * @class Icon
 	 * @extends View
 	 */
-	Icon = View.extend( {
+	function Icon( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Icon, View, {
 		/** @inheritdoc */
 		isTemplateMode: true,
 		/**

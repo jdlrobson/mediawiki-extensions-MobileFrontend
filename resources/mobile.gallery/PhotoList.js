@@ -14,7 +14,10 @@
 	 * @uses InfiniteScroll
 	 * @extends View
 	 */
-	PhotoList = View.extend( {
+	function PhotoList( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( PhotoList, View, {
 		template: mw.template.get( 'mobile.gallery', 'PhotoList.hogan' ),
 		/**
 		 * @cfg {Object} defaults Default options hash.

@@ -24,7 +24,10 @@
 	 *     <code>
 	 *       var InfiniteScroll = M.require( 'InfiniteScroll' ),
 	 *         PhotoList;
-	 *       PhotoList = View.extend( {
+	 * function PhotoList ( options ) {
+	 *   this.initialize( options );
+	 * }
+	 * OOO.extend( PhotoList, View, {
 	 *         //...
 	 *         initialize: function ( options ) {
 	 *           this.api = new PhotoListApi( {

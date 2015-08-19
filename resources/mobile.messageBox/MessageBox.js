@@ -6,7 +6,10 @@
 	 * @class MessageBox
 	 * @extends View
 	 */
-	MessageBox = View.extend( {
+	function MessageBox( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( MessageBox, View, {
 		/** @inheritdoc */
 		isTemplateMode: true,
 		/**

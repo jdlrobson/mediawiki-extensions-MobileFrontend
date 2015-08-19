@@ -8,7 +8,10 @@
 	 * @class Button
 	 * @extends View
 	 */
-	Button = View.extend( {
+	function Button( options ) {
+		this.initialize( options );
+	}
+	OOO.extend( Button, View, {
 		/** @inheritdoc */
 		isTemplateMode: true,
 		/**
