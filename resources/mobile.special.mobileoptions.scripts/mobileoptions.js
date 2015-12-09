@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Checkbox,
 		context = M.require( 'mobile.context/context' ),
 		FontChanger = M.require( 'mobile.fontchanger/FontChanger' ),
@@ -56,4 +57,4 @@
 	}
 
 	$( initLocalStorageElements );
-}( mw.mobileFrontend, jQuery ) );
+} );

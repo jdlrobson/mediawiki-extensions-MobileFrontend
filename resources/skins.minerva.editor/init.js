@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var
 		settings = M.require( 'mobile.settings/settings' ),
@@ -365,4 +366,4 @@
 		}
 	}
 
-}( mw.mobileFrontend, jQuery ) );
+} );

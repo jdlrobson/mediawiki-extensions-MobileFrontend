@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var InfiniteScroll = M.require( 'mobile.infiniteScroll/InfiniteScroll' );
 
 	QUnit.module( 'MobileFrontend InfiniteScroll', {
@@ -48,4 +49,4 @@
 		assert.strictEqual( emitSpy.called, false, 'emit should not be called' );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

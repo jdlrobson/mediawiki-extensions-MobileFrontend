@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var
 		Class = M.require( 'mobile.oo/Class' ),
@@ -254,4 +255,4 @@
 	M.define( 'mobile.startup/OverlayManager', OverlayManager );
 	M.define( 'mobile.startup/overlayManager', overlayManager );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var SchemaMobileWebWatching,
 		user = M.require( 'mobile.user/user' ),
 		SchemaMobileWeb = M.require( 'mobile.loggingSchemas/SchemaMobileWeb' );

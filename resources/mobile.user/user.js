@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	/**
 	 * Utility library for looking up details on the current user
 	 * @class user
@@ -77,4 +78,4 @@
 	};
 	M.define( 'mobile.user/user', user );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

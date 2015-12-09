@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Schema = M.require( 'mobile.startup/Schema' ),
 		SchemaMobileWebSearch,
 		context = M.require( 'mobile.context/context' );
@@ -33,4 +34,4 @@
 
 	M.define( 'mobile.loggingSchemas/SchemaMobileWebSearch', SchemaMobileWebSearch );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

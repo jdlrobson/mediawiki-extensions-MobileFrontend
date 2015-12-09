@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var toggle,
 		sectionHtml = mw.template.get( 'tests.mobilefrontend', 'section.hogan' ).render(),
@@ -330,4 +331,4 @@
 
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

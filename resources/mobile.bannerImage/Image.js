@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var browser = M.require( 'mobile.browser/browser' );
 
@@ -50,4 +51,4 @@
 
 	M.define( 'mobile.bannerImage/Image', Image );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

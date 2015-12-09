@@ -1,4 +1,5 @@
-( function ( M, $, OO ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var EventEmitter,
 		Class = M.require( 'mobile.oo/Class' );
@@ -22,4 +23,4 @@
 	// move this to a separate file
 	$.extend( mw.mobileFrontend, new EventEmitter() );
 
-}( mw.mobileFrontend, jQuery, OO ) );
+} );

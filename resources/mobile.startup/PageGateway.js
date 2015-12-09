@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var sectionTemplate = mw.template.get( 'mobile.startup', 'Section.hogan' );
 
 	/**
@@ -328,4 +329,4 @@
 	};
 
 	M.define( 'mobile.startup/PageGateway', PageGateway );
-}( mw.mobileFrontend, jQuery ) );
+} );

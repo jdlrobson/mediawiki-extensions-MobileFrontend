@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var View = M.require( 'mobile.view/View' );
 
@@ -276,4 +277,4 @@
 		assert.strictEqual( view.$( 'span' ).length, 0, 'span disappeared' );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var PageGateway = M.require( 'mobile.startup/PageGateway' ),
 		TalkOverlay = M.require( 'mobile.talk.overlays/TalkOverlay' );
@@ -80,4 +81,4 @@
 			'Check the header knows it is not empty.' );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

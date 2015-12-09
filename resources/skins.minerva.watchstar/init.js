@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var Watchstar = M.require( 'mobile.watchstar/Watchstar' ),
 		skin = M.require( 'skins.minerva.scripts/skin' ),
@@ -26,4 +27,4 @@
 	}
 	init( M.getCurrentPage() );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

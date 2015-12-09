@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var sizeBuckets = [ 320, 640, 800, 1024, 1280, 1920, 2560, 2880 ];
 
 	/**
@@ -61,4 +62,4 @@
 	ImageGateway._findSizeBucket = findSizeBucket;
 	M.define( 'mobile.mediaViewer/ImageGateway', ImageGateway );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

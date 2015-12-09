@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var loader = M.require( 'mobile.overlays/moduleLoader' ),
 		overlayManager = M.require( 'mobile.startup/overlayManager' ),
@@ -57,4 +58,4 @@
 
 	$( initButton );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

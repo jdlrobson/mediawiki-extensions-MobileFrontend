@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var inSample, inStable, experiment,
 		settings = M.require( 'mobile.settings/settings' ),
 		time = M.require( 'mobile.modifiedBar/time' ),
@@ -202,4 +203,4 @@
 		initModifiedInfo();
 		initHistoryLink( $( '#mw-mf-last-modified a' ) );
 	} );
-}( mw.mobileFrontend, jQuery ) );
+} );

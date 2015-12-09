@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var PhotoList,
 		icons = M.require( 'mobile.startup/icons' ),
 		PhotoListGateway = M.require( 'mobile.gallery/PhotoListGateway' ),
@@ -139,4 +140,4 @@
 	} );
 
 	M.define( 'mobile.gallery/PhotoList', PhotoList );
-}( mw.mobileFrontend, jQuery ) );
+} );

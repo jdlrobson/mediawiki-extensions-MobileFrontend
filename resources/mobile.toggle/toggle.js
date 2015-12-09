@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var context = M.require( 'mobile.context/context' ),
 		settings = M.require( 'mobile.settings/settings' ),
 		browser = M.require( 'mobile.browser/browser' ),
@@ -357,4 +358,4 @@
 
 	M.define( 'mobile.toggle/Toggler', Toggler );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

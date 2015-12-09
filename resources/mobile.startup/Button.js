@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var Button,
 		View = M.require( 'mobile.view/View' );
@@ -45,4 +45,4 @@
 	} );
 	M.define( 'mobile.startup/Button', Button );
 
-}( mw.mobileFrontend ) );
+} );

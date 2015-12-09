@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var MessageBox,
 		View = M.require( 'mobile.view/View' );
 
@@ -20,4 +20,4 @@
 	} );
 
 	M.define( 'mobile.messageBox/MessageBox', MessageBox );
-}( mw.mobileFrontend ) );
+} );

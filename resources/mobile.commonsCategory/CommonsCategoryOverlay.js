@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Overlay = M.require( 'mobile.overlays/Overlay' ),
 		PhotoList = M.require( 'mobile.gallery/PhotoList' ),
 		CommonsCategoryOverlay;
@@ -20,4 +20,4 @@
 		}
 	} );
 	M.define( 'mobile.commonsCategory/CommonsCategoryOverlay', CommonsCategoryOverlay );
-}( mw.mobileFrontend ) );
+} );

@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var EventEmitter = M.require( 'mobile.oo/eventemitter' );
 
@@ -22,4 +22,4 @@
 		assert.ok( spy.calledOnce, 'run callback once' );
 	} );
 
-}( mw.mobileFrontend ) );
+} );

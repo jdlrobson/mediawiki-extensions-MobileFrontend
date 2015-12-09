@@ -10,7 +10,8 @@ returning to the page, show a blue tutorial in 50% of cases prompting them to tr
 editing. You can replicate this by appending campaign=leftNavSignup to the URL of an
 editable page whilst logged in, although you must be in test group A to see the CTA.
 */
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var PageActionOverlay = M.require( 'mobile.contentOverlays/PointerOverlay' ),
 		util = M.require( 'mobile.startup/util' ),
 		escapeHash = util.escapeHash,
@@ -74,4 +75,4 @@ editable page whilst logged in, although you must be in test group A to see the 
 		} );
 	}
 
-}( mw.mobileFrontend, jQuery ) );
+} );

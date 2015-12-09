@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Page = M.require( 'mobile.startup/Page' );
 
 	/**
@@ -210,4 +211,4 @@
 
 	M.define( 'mobile.search.api/SearchGateway', SearchGateway );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

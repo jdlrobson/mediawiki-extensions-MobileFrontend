@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var EditorGateway = M.require( 'mobile.editor.api/EditorGateway' );
 
 	QUnit.module( 'MobileFrontend mobile.editor.api/EditorGateway', {
@@ -616,4 +617,4 @@
 		assert.ok( mw.Api.prototype.post.calledTwice, 'check the spy was called twice' );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

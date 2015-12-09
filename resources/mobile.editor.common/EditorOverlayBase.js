@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Overlay = M.require( 'mobile.overlays/Overlay' ),
 		PageGateway = M.require( 'mobile.startup/PageGateway' ),
 		browser = M.require( 'mobile.browser/browser' ),
@@ -394,4 +395,4 @@
 
 	M.define( 'mobile.editor.common/EditorOverlayBase', EditorOverlayBase )
 		.deprecate( 'modules/editor/EditorOverlayBase' );
-}( mw.mobileFrontend, jQuery ) );
+} );

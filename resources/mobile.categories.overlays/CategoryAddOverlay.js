@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var CategoryAddOverlay,
 		Overlay = M.require( 'mobile.overlays/Overlay' ),
@@ -138,4 +139,4 @@
 
 	M.define( 'mobile.categories.overlays/CategoryAddOverlay', CategoryAddOverlay );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

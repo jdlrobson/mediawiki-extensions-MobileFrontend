@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var FontChanger,
 		View = M.require( 'mobile.view/View' ),
 		Button = M.require( 'mobile.startup/Button' ),
@@ -88,4 +89,4 @@
 
 	M.define( 'mobile.fontchanger/FontChanger', FontChanger );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

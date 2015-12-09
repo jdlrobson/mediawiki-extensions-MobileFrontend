@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Page = M.require( 'mobile.startup/Page' );
 
 	QUnit.module( 'MobileFrontend Page' );
@@ -93,4 +94,4 @@
 		} );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

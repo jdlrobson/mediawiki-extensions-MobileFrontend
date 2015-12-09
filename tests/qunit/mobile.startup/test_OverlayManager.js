@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var
 		OverlayManager = M.require( 'mobile.startup/OverlayManager' ),
 		EventEmitter = M.require( 'mobile.oo/eventemitter' ),
@@ -184,4 +185,4 @@
 		fakeRouter.emit( 'route', ev );
 		assert.ok( ev.isDefaultPrevented(), 'prevent route change' );
 	} );
-}( mw.mobileFrontend, jQuery ) );
+} );

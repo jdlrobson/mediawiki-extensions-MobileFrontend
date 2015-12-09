@@ -1,4 +1,6 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
+	console.log( M, 'go' );
 	var context;
 
 	/**
@@ -42,4 +44,4 @@
 
 	M.define( 'mobile.context/context', context );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

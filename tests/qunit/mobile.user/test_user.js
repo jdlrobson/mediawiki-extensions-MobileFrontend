@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var user = M.require( 'mobile.user/user' );
 
 	QUnit.module( 'MobileFrontend user.js' );
@@ -17,4 +17,4 @@
 		assert.ok( spy.calledTwice, 'Any previously stored session ID is removed from storage' );
 	} );
 
-}( mw.mobileFrontend ) );
+} );

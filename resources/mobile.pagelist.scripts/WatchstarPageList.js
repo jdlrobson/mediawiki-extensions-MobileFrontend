@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var WatchstarPageList,
 		mWatchstar,
@@ -100,4 +101,4 @@
 
 	mWatchstar = M.define( 'mobile.pagelist.scripts/WatchstarPageList', WatchstarPageList );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

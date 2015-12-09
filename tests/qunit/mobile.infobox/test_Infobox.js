@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Infobox = M.require( 'modules/Infobox' );
 
 	QUnit.module( 'Infobox' );
@@ -22,4 +22,4 @@
 				calendarmodel: 'http://www.wikidata.org/entity/Q1985727'
 			} ), 'March 14 1879', 'Albert Einstein\'s DOB is correctly formatted.' );
 	} );
-}( mw.mobileFrontend ) );
+} );

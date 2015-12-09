@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var ImageOverlay,
 		Overlay = M.require( 'mobile.overlays/Overlay' ),
 		Icon = M.require( 'mobile.startup/Icon' ),
@@ -253,4 +254,4 @@
 	} );
 	M.define( 'mobile.mediaViewer/ImageOverlay', ImageOverlay );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

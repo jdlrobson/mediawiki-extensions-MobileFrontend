@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var Panel = M.require( 'mobile.startup/Panel' ),
 		Icon = M.require( 'mobile.startup/Icon' ),
@@ -85,4 +86,4 @@
 
 	M.define( 'mobile.drawers/Drawer', Drawer );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

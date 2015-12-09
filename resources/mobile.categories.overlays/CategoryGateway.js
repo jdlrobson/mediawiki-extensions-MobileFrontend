@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var prototype,
 		SearchGateway = M.require( 'mobile.search.api/SearchGateway' );
 
@@ -63,4 +64,4 @@
 
 	M.define( 'mobile.categories.overlays/CategoryGateway', CategoryGateway );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

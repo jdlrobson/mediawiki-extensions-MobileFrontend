@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Nearby,
 		MessageBox = M.require( 'mobile.messageBox/MessageBox' ),
 		NearbyGateway = M.require( 'mobile.nearby/NearbyGateway' ),
@@ -245,4 +246,4 @@
 
 	M.define( 'mobile.nearby/Nearby', Nearby );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

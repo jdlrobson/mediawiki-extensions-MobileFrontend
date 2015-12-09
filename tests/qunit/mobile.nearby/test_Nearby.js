@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var NearbyGateway = M.require( 'mobile.nearby/NearbyGateway' ),
 		api = new mw.Api(),
@@ -154,4 +155,4 @@
 		assert.ok( this.spy.calledWithMatch( pageTitle, 1000 ), 'Check API got called' );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

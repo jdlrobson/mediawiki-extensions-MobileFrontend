@@ -1,5 +1,5 @@
-( function () {
-	var loader;
+return ( function () {
+	var loader, moduleLoader;
 
 	/**
 	 * Class for managing modules
@@ -85,7 +85,7 @@
 	 * @class mw.mobileFrontend
 	 * @singleton
 	 */
-	mw.mobileFrontend = {
+	moduleLoader = {
 		/**
 		 * @see ModuleLoader#define
 		 * @return {Object}
@@ -108,6 +108,6 @@
 	};
 
 	// inception to support testing (!!)
-	mw.mobileFrontend.define( 'ModuleLoader', ModuleLoader );
-
+	moduleLoader.define( 'ModuleLoader', ModuleLoader );
+	return moduleLoader;
 }() );

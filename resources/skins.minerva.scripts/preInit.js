@@ -5,7 +5,8 @@
  * @class mw.mobileFrontend
  * @singleton
  */
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var currentPage, skin,
 		PageGateway = M.require( 'mobile.startup/PageGateway' ),
 		gateway = new PageGateway( new mw.Api() ),
@@ -95,4 +96,4 @@
 		M.require( 'mobile.startup/Schema' ).flushBeacon();
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

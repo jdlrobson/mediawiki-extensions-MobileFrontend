@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	/**
 	 * API for managing clickable watchstar
 	 *
@@ -110,4 +111,4 @@
 
 	M.define( 'mobile.watchstar/WatchstarGateway', WatchstarGateway );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

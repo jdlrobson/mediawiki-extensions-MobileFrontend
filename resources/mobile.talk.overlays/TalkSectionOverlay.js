@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var TalkSectionOverlay,
 		TalkOverlayBase = M.require( 'mobile.talk.overlays/TalkOverlayBase' ),
 		popup = M.require( 'mobile.toast/toast' ),
@@ -150,4 +151,4 @@
 	} );
 
 	M.define( 'mobile.talk.overlays/TalkSectionOverlay', TalkSectionOverlay );
-}( mw.mobileFrontend, jQuery ) );
+} );

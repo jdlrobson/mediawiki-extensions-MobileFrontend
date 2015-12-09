@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var
 		user = M.require( 'mobile.user/user' ),
 		PhotoList = M.require( 'mobile.gallery/PhotoList' ),
@@ -37,4 +38,4 @@
 		}
 	}
 
-}( mw.mobileFrontend, jQuery ) );
+} );

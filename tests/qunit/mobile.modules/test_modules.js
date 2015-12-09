@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var ModuleLoader = M.require( 'ModuleLoader' );
 
 	QUnit.module( 'MobileFrontend ModuleLoader', {
@@ -27,4 +27,4 @@
 		}, 'Cannot define two modules with the same name' );
 		assert.strictEqual( this.loader.require( 'bar' ), 5, 'Returns first definition of module.' );
 	} );
-}( mw.mobileFrontend ) );
+} );

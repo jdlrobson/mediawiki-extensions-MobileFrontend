@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Overlay = M.require( 'mobile.overlays/Overlay' ),
 		api = M.require( 'mobile.startup/api' ),
 		Anchor = M.require( 'mobile.startup/Anchor' ),
@@ -151,4 +152,4 @@
 
 	M.define( 'mobile.notifications.overlay/NotificationsOverlay', NotificationsOverlay );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

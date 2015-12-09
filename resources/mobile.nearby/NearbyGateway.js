@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var limit = 50,
 		Page = M.require( 'mobile.startup/Page' ),
 		ns = mw.config.get( 'wgMFContentNamespace' );
@@ -196,4 +197,4 @@
 	};
 
 	M.define( 'mobile.nearby/NearbyGateway', NearbyGateway );
-}( mw.mobileFrontend, jQuery ) );
+} );

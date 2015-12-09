@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	/**
 	 * API that helps save and retrieve page content
 	 * @class EditorGateway
@@ -277,4 +278,4 @@
 
 	M.define( 'mobile.editor.api/EditorGateway', EditorGateway );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

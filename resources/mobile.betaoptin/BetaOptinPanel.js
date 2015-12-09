@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var BetaOptinPanel,
 		Button = M.require( 'mobile.startup/Button' ),
@@ -45,4 +46,4 @@
 
 	M.define( 'mobile.betaoptin/BetaOptinPanel', BetaOptinPanel );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

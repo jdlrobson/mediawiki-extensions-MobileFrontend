@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var
 		View = M.require( 'mobile.view/View' ),
@@ -40,4 +40,4 @@
 
 	M.define( 'mobile.startup/Thumbnail', Thumbnail );
 
-}( mw.mobileFrontend ) );
+} );

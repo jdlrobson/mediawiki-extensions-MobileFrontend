@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var EventEmitter = M.require( 'mobile.oo/eventemitter' ),
 		InfiniteScroll;
@@ -130,4 +131,4 @@
 	} );
 
 	M.define( 'mobile.infiniteScroll/InfiniteScroll', InfiniteScroll );
-}( mw.mobileFrontend, jQuery ) );
+} );

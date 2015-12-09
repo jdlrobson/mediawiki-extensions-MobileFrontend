@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var Watchstar,
 		View = M.require( 'mobile.view/View' ),
@@ -192,4 +192,4 @@
 
 	M.define( 'mobile.watchstar/Watchstar', Watchstar );
 
-}( mw.mobileFrontend ) );
+} );

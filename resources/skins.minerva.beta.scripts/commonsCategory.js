@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var category,
 		JSONPForeignApi = M.require( 'mobile.foreignApi/JSONPForeignApi' ),
 		loader = M.require( 'mobile.overlays/moduleLoader' ),
@@ -30,4 +31,4 @@
 		} ).appendTo( '.pre-content' );
 	}
 
-}( mw.mobileFrontend, jQuery ) );
+} );

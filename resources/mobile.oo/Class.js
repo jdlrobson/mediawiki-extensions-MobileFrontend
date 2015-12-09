@@ -1,7 +1,7 @@
 /**
  * @class Class
  */
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	/**
 	 * Extends a class with new methods and member properties.
@@ -47,4 +47,4 @@
 
 	M.define( 'mobile.oo/Class', Class );
 
-}( mw.mobileFrontend ) );
+} );

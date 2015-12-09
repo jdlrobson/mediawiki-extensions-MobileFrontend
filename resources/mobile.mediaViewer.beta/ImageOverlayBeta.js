@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var ImageOverlay = M.require( 'mobile.mediaViewer/ImageOverlay' ),
 		Swipe = M.require( 'mobile.swipe/Swipe' ),
 		ImageOverlayBeta;
@@ -37,4 +38,4 @@
 
 	M.define( 'mobile.mediaViewer.beta/ImageOverlayBeta', ImageOverlayBeta );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var PointerOverlay,
 		Overlay = M.require( 'mobile.overlays/Overlay' );
 
@@ -120,4 +121,4 @@
 
 	M.define( 'mobile.contentOverlays/PointerOverlay', PointerOverlay );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var EditorOverlay,
 		EditorOverlayBase = M.require( 'mobile.editor.common/EditorOverlayBase' ),
 		Section = M.require( 'mobile.startup/Section' ),
@@ -477,4 +478,4 @@
 	} );
 
 	M.define( 'mobile.editor.overlay/EditorOverlay', EditorOverlay );
-}( mw.mobileFrontend, jQuery ) );
+} );

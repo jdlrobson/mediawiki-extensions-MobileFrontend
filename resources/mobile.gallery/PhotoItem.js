@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var PhotoItem,
 		View = M.require( 'mobile.view/View' );
 
@@ -12,4 +12,4 @@
 		tagName: 'li'
 	} );
 	M.define( 'mobile.gallery/PhotoItem', PhotoItem );
-}( mw.mobileFrontend ) );
+} );

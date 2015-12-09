@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var loader = M.require( 'mobile.overlays/moduleLoader' ),
 		LoadingOverlay = M.require( 'mobile.overlays/LoadingOverlay' ),
 		user = M.require( 'mobile.user/user' ),
@@ -69,4 +70,4 @@
 			}, 10 );
 		} );
 	}
-}( mw.mobileFrontend, jQuery ) );
+} );

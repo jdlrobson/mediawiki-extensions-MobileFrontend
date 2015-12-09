@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var	AddReferenceOverlay,
 		Overlay = M.require( 'mobile.overlays/Overlay' );
 
@@ -60,4 +61,4 @@
 	} );
 
 	M.define( 'mobile.editor.overlay.withtoolbar/AddReferenceOverlay', AddReferenceOverlay );
-}( mw.mobileFrontend, jQuery ) );
+} );

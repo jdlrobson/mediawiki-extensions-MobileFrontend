@@ -1,5 +1,6 @@
 /*jshint unused:vars */
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var
 		View = M.require( 'mobile.view/View' ),
@@ -317,4 +318,4 @@
 
 	M.define( 'mobile.overlays/Overlay', Overlay );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

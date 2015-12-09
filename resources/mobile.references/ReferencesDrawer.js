@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var ReferencesDrawer,
 		Drawer = M.require( 'mobile.drawers/Drawer' ),
 		Icon = M.require( 'mobile.startup/Icon' ),
@@ -73,4 +74,4 @@
 	} );
 
 	M.define( 'mobile.references/ReferencesDrawer', ReferencesDrawer );
-}( mw.mobileFrontend, jQuery ) );
+} );

@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var TalkOverlayBase = M.require( 'mobile.talk.overlays/TalkOverlayBase' ),
 		toast = M.require( 'mobile.toast/toast' ),
 		Icon = M.require( 'mobile.startup/Icon' ),
@@ -174,4 +175,4 @@
 
 	M.define( 'mobile.talk.overlays/TalkSectionAddOverlay', TalkSectionAddOverlay );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var schema,
 		page = M.getCurrentPage(),
 		SchemaMobileWebSectionUsage = M.require( 'mobile.loggingSchemas/SchemaMobileWebSectionUsage' ),
@@ -33,4 +34,4 @@
 	) {
 		init( $contentContainer, 'content-', page );
 	}
-}( mw.mobileFrontend, jQuery ) );
+} );

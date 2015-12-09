@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Router = M.require( 'mobile.startup/Router' ),
 		hashQueue = [],
 		interval, router;
@@ -99,4 +100,4 @@
 		} );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

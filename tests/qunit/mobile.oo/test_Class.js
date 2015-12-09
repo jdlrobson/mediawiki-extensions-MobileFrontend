@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Class = M.require( 'mobile.oo/Class' );
 
 	QUnit.module( 'MobileFrontend Class' );
@@ -54,4 +54,4 @@
 		assert.ok( spy.calledWith( 'abc', 123 ), 'call #initialize when creating new instance' );
 	} );
 
-}( mw.mobileFrontend ) );
+} );

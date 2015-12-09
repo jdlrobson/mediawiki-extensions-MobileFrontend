@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var BackToTopOverlay,
 		View = M.require( 'mobile.view/View' );
@@ -49,4 +50,4 @@
 
 	M.define( 'mobile.backtotop/BackToTopOverlay', BackToTopOverlay );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

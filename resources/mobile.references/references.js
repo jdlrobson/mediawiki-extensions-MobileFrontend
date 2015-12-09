@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var ReferencesDrawer, drawer;
 
 	/**
@@ -65,4 +66,4 @@
 		setup: setup
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

@@ -1,4 +1,7 @@
-( function ( HTML, M, $ ) {
+var HTML = mw.html,
+	$ = jQuery;
+
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var Page,
 		time = M.require( 'mobile.modifiedBar/time' ),
@@ -350,4 +353,4 @@
 	};
 	M.define( 'mobile.startup/Page', Page );
 
-}( mw.html, mw.mobileFrontend, jQuery ) );
+} );

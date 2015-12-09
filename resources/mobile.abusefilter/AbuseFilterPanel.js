@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var
 		View = M.require( 'mobile.view/View' ),
 		AbuseFilterOverlay = M.require( 'mobile.abusefilter/AbuseFilterOverlay' ),
@@ -68,4 +68,4 @@
 
 	M.define( 'mobile.abusefilter/AbuseFilterPanel', AbuseFilterPanel );
 
-}( mw.mobileFrontend ) );
+} );

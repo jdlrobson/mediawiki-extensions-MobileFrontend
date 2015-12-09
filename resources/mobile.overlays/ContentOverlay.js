@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var ContentOverlay,
 		mContentOverlay,
@@ -29,4 +29,4 @@
 	} );
 	mContentOverlay = M.define( 'mobile.overlays/ContentOverlay', ContentOverlay );
 
-}( mw.mobileFrontend ) );
+} );

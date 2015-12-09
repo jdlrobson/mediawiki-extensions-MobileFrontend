@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var m = M.require( 'mobile.gallery/PhotoListApi' );
 
@@ -23,4 +24,4 @@
 		} );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

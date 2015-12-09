@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	// Most people on mobile devices are on a personal device so this property should be assumed.
 	// To be consistent across platforms do same on desktop
 	$( function () {

@@ -1,5 +1,6 @@
 /* jshint -W100 */
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var pageGateway,
 		PageGateway = M.require( 'mobile.startup/PageGateway' );
 
@@ -461,4 +462,4 @@
 		} );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

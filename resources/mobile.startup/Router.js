@@ -1,5 +1,6 @@
 // FIXME: Merge this code with OverlayManager
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var key, router,
 		EventEmitter = M.require( 'mobile.oo/eventemitter' );
@@ -171,4 +172,4 @@
 	M.define( 'mobile.startup/Router', Router );
 	M.define( 'mobile.startup/router', router );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

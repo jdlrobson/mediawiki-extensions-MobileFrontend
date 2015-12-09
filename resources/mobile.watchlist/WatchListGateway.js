@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Page = M.require( 'mobile.startup/Page' );
 
 	/**
@@ -108,4 +109,4 @@
 
 	M.define( 'mobile.watchlist/WatchListGateway', WatchListGateway );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	/**
 	 * Extends mw.ForeignApi to force it to use JSONP for non-POST requests
 	 * @class JSONPForeignApi
@@ -34,4 +35,4 @@
 
 	M.define( 'mobile.foreignApi/JSONPForeignApi', JSONPForeignApi );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

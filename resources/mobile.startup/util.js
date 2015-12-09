@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var util;
 
 	/**
@@ -41,4 +41,4 @@
 
 	M.define( 'mobile.startup/util', util );
 
-}( mw.mobileFrontend ) );
+} );

@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Overlay = M.require( 'mobile.overlays/Overlay' ),
 		Icon = M.require( 'mobile.startup/Icon' ),
 		icon = new Icon( {
@@ -32,4 +32,4 @@
 		}
 	} );
 	M.define( 'mobile.issues/CleanupOverlay', CleanupOverlay );
-}( mw.mobileFrontend ) );
+} );

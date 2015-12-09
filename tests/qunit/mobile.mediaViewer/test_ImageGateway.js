@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var findSizeBucket = M.require( 'mobile.mediaViewer/ImageGateway' )._findSizeBucket;
 
 	QUnit.module( 'MobileFrontend mobile.mediaViewer/mediaViewer' );
@@ -9,4 +9,4 @@
 		assert.strictEqual( findSizeBucket( 9999 ), 2880, 'value greater than last bucket' );
 	} );
 
-}( mw.mobileFrontend ) );
+} );

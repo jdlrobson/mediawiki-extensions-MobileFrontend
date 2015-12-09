@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var TalkOverlayBase,
 		PageGateway = M.require( 'mobile.startup/PageGateway' ),
 		Overlay = M.require( 'mobile.overlays/Overlay' );
@@ -22,4 +22,4 @@
 
 	M.define( 'mobile.talk.overlays/TalkOverlayBase', TalkOverlayBase );
 
-}( mw.mobileFrontend ) );
+} );

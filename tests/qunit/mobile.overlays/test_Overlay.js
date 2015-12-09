@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Overlay = M.require( 'mobile.overlays/Overlay' );
 
 	QUnit.module( 'MobileFrontend: Overlay.js', {

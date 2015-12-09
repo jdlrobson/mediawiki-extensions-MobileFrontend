@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var SearchOverlay, SearchGateway,
 		searchPlaceholderMsg = 'mobile-frontend-placeholder',
 		SchemaMobileWebClickTracking = M.require( 'mobile.loggingSchemas/SchemaMobileWebClickTracking' ),
@@ -65,4 +66,4 @@
 
 	M.require( 'mobile.search/MobileWebSearchLogger' ).register();
 
-}( mw.mobileFrontend, jQuery ) );
+} );

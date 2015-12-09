@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var Anchor,
 		View = M.require( 'mobile.view/View' );
@@ -32,4 +32,4 @@
 	} );
 	M.define( 'mobile.startup/Anchor', Anchor );
 
-}( mw.mobileFrontend ) );
+} );

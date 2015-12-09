@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var View = M.require( 'mobile.view/View' ),
 		Section,
@@ -39,4 +40,4 @@
 	} );
 	M.define( 'mobile.startup/Section', Section );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

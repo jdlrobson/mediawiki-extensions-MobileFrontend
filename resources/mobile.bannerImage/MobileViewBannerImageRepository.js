@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Class = M.require( 'mobile.oo/Class' ),
 		Image = M.require( 'mobile.bannerImage/Image' ),
 		MobileViewBannerImageRepository;
@@ -87,4 +88,4 @@
 
 	M.define( 'mobile.bannerImage/MobileViewBannerImageRepository', MobileViewBannerImageRepository );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

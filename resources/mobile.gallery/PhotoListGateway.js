@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var IMAGE_WIDTH = mw.config.get( 'wgMFThumbnailSizes' ).small;
 
 	/**
@@ -135,4 +136,4 @@
 	};
 
 	M.define( 'mobile.gallery/PhotoListGateway', PhotoListGateway );
-}( mw.mobileFrontend, jQuery ) );
+} );

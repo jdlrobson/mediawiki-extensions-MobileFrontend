@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var BannerImage,
 		router = M.require( 'mobile.startup/router' ),
 		View = M.require( 'mobile.view/View' ),
@@ -133,4 +134,4 @@
 
 	M.define( 'mobile.bannerImage/BannerImage', BannerImage );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var SchemaMobileWeb,
 		Schema = M.require( 'mobile.startup/Schema' ),
 		context = M.require( 'mobile.context/context' );

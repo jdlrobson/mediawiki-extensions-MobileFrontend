@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var View = M.require( 'mobile.view/View' ),
 		Panel;
@@ -81,4 +81,4 @@
 
 	M.define( 'mobile.startup/Panel', Panel );
 
-}( mw.mobileFrontend ) );
+} );

@@ -2,7 +2,8 @@
  * Warn people if they're trying to switch to desktop but have cookies disabled.
  */
 
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var settings = M.require( 'mobile.settings/settings' ),
 		cookiesEnabled = settings.cookiesEnabled,
@@ -30,4 +31,4 @@
 
 	$( '#mw-mf-display-toggle' ).on( 'click', desktopViewClick );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

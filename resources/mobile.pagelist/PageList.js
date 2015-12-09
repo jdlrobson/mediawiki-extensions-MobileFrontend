@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var PageList,
 		View = M.require( 'mobile.view/View' ),
@@ -71,4 +72,4 @@
 
 	M.define( 'mobile.pagelist/PageList', PageList );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

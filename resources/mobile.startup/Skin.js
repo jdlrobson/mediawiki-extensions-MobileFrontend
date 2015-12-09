@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var Skin,
 		browser = M.require( 'mobile.browser/browser' ),
@@ -193,4 +194,4 @@
 
 	M.define( 'mobile.startup/Skin', Skin );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

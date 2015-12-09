@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Toast,
 		settingsKey = 'mobileFrontend/toast',
 		settings = M.require( 'mobile.settings/settings' ),
@@ -84,4 +85,4 @@
 
 	M.define( 'mobile.toast/toast', new Toast() );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

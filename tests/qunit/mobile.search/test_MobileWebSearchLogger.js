@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var SchemaMobileWebSearch = M.require( 'mobile.loggingSchemas/SchemaMobileWebSearch' ),
 		MobileWebSearchLogger = M.require( 'mobile.search/MobileWebSearchLogger' );
@@ -119,4 +119,4 @@
 		);
 	} );
 
-}( mw.mobileFrontend ) );
+} );

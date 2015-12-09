@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Page = M.require( 'mobile.startup/Page' ),
 		Skin = M.require( 'mobile.startup/Skin' );
 
@@ -22,4 +23,4 @@
 			'Skin is marked as working in emulated mode.' );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

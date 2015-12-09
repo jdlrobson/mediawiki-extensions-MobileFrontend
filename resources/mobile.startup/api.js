@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var Api, api,
 		EventEmitter = M.require( 'mobile.oo/eventemitter' );
@@ -30,4 +30,4 @@
 
 	M.deprecate( 'mobile.startup/api', api, 'mw.Api' );
 
-}( mw.mobileFrontend ) );
+} );

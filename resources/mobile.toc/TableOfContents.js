@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var TableOfContents,
 		SchemaMobileWebClickTracking = M.require( 'mobile.loggingSchemas/SchemaMobileWebClickTracking' ),
 		uiSchema = new SchemaMobileWebClickTracking( {}, 'MobileWebUIClickTracking' ),
@@ -55,4 +55,4 @@
 	} );
 
 	M.define( 'mobile.toc/TableOfContents', TableOfContents );
-}( mw.mobileFrontend ) );
+} );

@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var browser;
 
 	/**
@@ -224,4 +225,4 @@
 	browser = new Browser( window.navigator.userAgent, $( 'html' ) );
 	M.define( 'mobile.browser/Browser', Browser );
 	M.define( 'mobile.browser/browser', browser );
-}( mw.mobileFrontend, jQuery ) );
+} );

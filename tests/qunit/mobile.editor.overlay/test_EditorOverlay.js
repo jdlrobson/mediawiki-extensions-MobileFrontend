@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var EditorGateway = M.require( 'mobile.editor.api/EditorGateway' ),
 		EditorOverlay = M.require( 'mobile.editor.overlay/EditorOverlay' );
 
@@ -96,4 +97,4 @@
 		assert.ok( editorOverlay.$anonWarning.length > 0, 'Editorwarning (IP will be saved) visible.' );
 		assert.ok( editorOverlay.$( '.anonymous' ).length > 0, 'Continue login has a second class.' );
 	} );
-}( mw.mobileFrontend, jQuery ) );
+} );

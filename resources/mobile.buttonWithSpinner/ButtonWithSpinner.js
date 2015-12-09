@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	/**
 	 * Button with a spinner indicator
 	 * Behaves the same as OO.ui.Button widget. Also defines custom methods that show and hide
@@ -37,4 +37,4 @@
 	};
 
 	M.define( 'mobile.buttonWithSpinner/ButtonWithSpinner', ButtonWithSpinner );
-}( mw.mobileFrontend ) );
+} );

@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var loader,
 		LoadingOverlay = M.require( 'mobile.overlays/LoadingOverlay' );
 
@@ -35,4 +35,4 @@
 	};
 	M.define( 'mobile.overlays/moduleLoader', loader );
 
-}( mw.mobileFrontend ) );
+} );

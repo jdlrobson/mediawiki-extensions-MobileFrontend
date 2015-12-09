@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var WatchList,
 		WatchstarPageList = M.require( 'mobile.pagelist.scripts/WatchstarPageList' ),
 		InfiniteScroll = M.require( 'mobile.infiniteScroll/InfiniteScroll' ),
@@ -85,4 +86,4 @@
 
 	M.define( 'mobile.watchlist/WatchList', WatchList );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

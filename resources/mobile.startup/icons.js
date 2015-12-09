@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var Icon = M.require( 'mobile.startup/Icon' );
 
@@ -35,4 +36,4 @@
 		}
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

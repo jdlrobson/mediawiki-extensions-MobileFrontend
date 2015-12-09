@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var
 		Overlay = M.require( 'mobile.overlays/Overlay' ),
@@ -368,4 +369,4 @@
 
 	M.define( 'mobile.search/SearchOverlay', SearchOverlay );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

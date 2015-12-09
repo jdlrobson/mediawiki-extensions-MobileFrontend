@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var Overlay = M.require( 'mobile.overlays/Overlay' ),
 		settings = M.require( 'mobile.settings/settings' ),
@@ -139,4 +140,4 @@
 
 	M.define( 'mobile.overlays/LanguageOverlay', LanguageOverlay );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

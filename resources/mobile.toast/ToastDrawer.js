@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var ToastDrawer,
 		Drawer = M.require( 'mobile.drawers/Drawer' );
 
@@ -28,4 +28,4 @@
 
 	M.define( 'mobile.toast/ToastDrawer', ToastDrawer );
 
-}( mw.mobileFrontend ) );
+} );

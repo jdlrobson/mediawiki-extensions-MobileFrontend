@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var module = ( function () {
 		var overlayManager = M.require( 'mobile.startup/overlayManager' ),
@@ -123,4 +124,4 @@
 
 	M.define( 'mobile.issues/cleanuptemplates', module );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

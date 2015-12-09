@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var MainMenu,
 		browser = M.require( 'mobile.browser/browser' ),
 		View = M.require( 'mobile.view/View' );
@@ -157,4 +158,4 @@
 
 	M.define( 'mobile.mainMenu/MainMenu', MainMenu );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

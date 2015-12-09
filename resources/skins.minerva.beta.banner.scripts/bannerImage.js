@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var MobileViewBannerImageRepository = M.require( 'mobile.bannerImage/MobileViewBannerImageRepository' ),
 		BannerImage = M.require( 'mobile.bannerImage/BannerImage' ),
 		page = M.getCurrentPage(),
@@ -20,4 +21,4 @@
 		bannerImage.on( 'loaded', $.proxy( skin, 'emit', 'changed' ) );
 		bannerImage.insertBefore( '.pre-content:first' );
 	}
-}( mw.mobileFrontend, jQuery ) );
+} );

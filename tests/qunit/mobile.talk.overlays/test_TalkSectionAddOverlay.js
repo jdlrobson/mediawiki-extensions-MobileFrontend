@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var TalkSectionAddOverlay = M.require( 'mobile.talk.overlays/TalkSectionAddOverlay' );
 
@@ -30,4 +31,4 @@
 		assert.strictEqual( overlay._saveHit, true, 'The save was recognized' );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

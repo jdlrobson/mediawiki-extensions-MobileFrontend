@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var ImageOverlay = M.require( 'mobile.mediaViewer/ImageOverlay' ),
 		image = {
 			descriptionurl: 'https://commons.wikimedia.org/wiki/File:The_Montgomery,_San_Francisco.jpg',
@@ -33,4 +34,4 @@
 		assert.equal( imageOverlay.$el.find( 'img' ).length, 1, 'Image is present.' );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

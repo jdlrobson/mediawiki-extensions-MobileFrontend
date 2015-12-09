@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var SchemaEdit,
 		Schema = M.require( 'mobile.startup/Schema' ),
 		user = M.require( 'mobile.user/user' );

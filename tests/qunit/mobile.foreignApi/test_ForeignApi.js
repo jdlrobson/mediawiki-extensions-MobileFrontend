@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var ForeignApi = M.require( 'mobile.foreignApi/ForeignApi' ),
 		api = M.require( 'mobile.startup/api' );
 
@@ -38,4 +39,4 @@
 		} ), 'Posting to ForeignApi with token when the user is logged out works!' );
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

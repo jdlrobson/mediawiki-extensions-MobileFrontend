@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var cleanuptemplates = M.require( 'mobile.issues/cleanuptemplates' );
 
@@ -23,4 +24,4 @@
 		);
 	} );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

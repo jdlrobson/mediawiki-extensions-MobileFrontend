@@ -4,7 +4,8 @@
  * @class mw.mobileFrontend.settings
  * @singleton
  */
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var settings = ( function () {
 			/**
@@ -87,4 +88,4 @@
 
 	M.define( 'mobile.settings/settings', settings );
 
-}( mw.mobileFrontend, jQuery ) );
+} );

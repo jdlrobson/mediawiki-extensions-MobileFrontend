@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 
 	var EventEmitter = M.require( 'mobile.oo/eventemitter' ),
 		Swipe;
@@ -142,4 +143,4 @@
 	} );
 
 	M.define( 'mobile.swipe/Swipe', Swipe );
-}( mw.mobileFrontend, jQuery ) );
+} );

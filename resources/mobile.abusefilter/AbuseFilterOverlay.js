@@ -1,4 +1,4 @@
-( function ( M ) {
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var AbuseFilterOverlay,
 		Button = M.require( 'mobile.startup/Button' ),
 		Overlay = M.require( 'mobile.overlays/Overlay' );
@@ -37,4 +37,4 @@
 	} );
 
 	M.define( 'mobile.abusefilter/AbuseFilterOverlay', AbuseFilterOverlay );
-}( mw.mobileFrontend ) );
+} );

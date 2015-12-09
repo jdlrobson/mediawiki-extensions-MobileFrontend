@@ -1,4 +1,5 @@
-( function ( M, $ ) {
+var $ = jQuery;
+mw.loader.with( 'mobile.modules', function ( M ) {
 	var Schema,
 		Class = M.require( 'mobile.oo/Class' ),
 		settings = M.require( 'mobile.settings/settings' ),
@@ -171,4 +172,4 @@
 
 	M.define( 'mobile.startup/Schema', Schema );
 
-}( mw.mobileFrontend, jQuery ) );
+} );
