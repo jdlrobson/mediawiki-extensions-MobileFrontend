@@ -46,12 +46,12 @@ class MobileFormatter extends HtmlFormatter {
 	 * @param string $html Text to process
 	 * @param Title $title Title to which $html belongs
 	 */
-	public function __construct( $html, $title ) {
+	public function __construct( $html, $title, $classes ) {
 		parent::__construct( $html );
-
+		
+		$this->mfRemovableClasses = $classes;
 		$this->title = $title;
-		$this->topHeadingTags = MobileContext::singleton()
-			->getMFConfig()->get( 'MFMobileFormatterHeadings' );
+		$this->topHeadingTags = 'h2';
 	}
 
 	/**
@@ -99,14 +99,16 @@ class MobileFormatter extends HtmlFormatter {
 		$this->mainPage = $value;
 	}
 
+	public function remove( $selectors ) {
+		parent::remove( $selectors );
+	}
 	/**
 	 * Removes content inappropriate for mobile devices
 	 * @param bool $removeDefaults Whether default settings at $wgMFRemovableClasses should be used
 	 * @return array
 	 */
 	public function filterContent( $removeDefaults = true ) {
-		$mfRemovableClasses = MobileContext::singleton()->getMFConfig()
-			->get( 'MFRemovableClasses' );
+		$mfRemovableClasses = $this->mfRemovableClasses;
 
 		if ( $removeDefaults ) {
 			$this->remove( $mfRemovableClasses['base'] );
@@ -116,7 +118,8 @@ class MobileFormatter extends HtmlFormatter {
 		if ( $this->removeMedia ) {
 			$this->doRemoveImages();
 		}
-		return parent::filterContent();
+		$res = parent::filterContent();
+		return $res;
 	}
 
 	/**
